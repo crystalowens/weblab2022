@@ -1,9 +1,14 @@
 import React from "react";
+import GameContent from "../Util/GameContent";
 import NavBar from "../Util/NavBar";
+import "./Game.css";
 
 const Game = () => {
     return (
-        <NavBar></NavBar>
+        <div className="GamePage">
+            <NavBar/>
+            <GameContent/>
+        </div>
     );
 }
 

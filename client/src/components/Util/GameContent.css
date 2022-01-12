@@ -1,0 +1,33 @@
+
+.GameContent-container{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ImagesSection{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.NFTImages{
+    display: flex;
+    flex-direction: column;
+}
+
+.ImageContainer{
+    margin: 25px;
+}
+.ImageContainer-image{
+    border-radius: 20px;
+    object-fit: cover;
+}
+.ImageContainer-title{
+    font-weight: bold;
+    color: var(--white);
+}
+.ImageContainer-description{
+    color: var(--white);
+}

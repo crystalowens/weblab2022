@@ -3,15 +3,16 @@ import { Router, Link } from "@reach/router";
 import "./NavBar.css";
 
 const Divider = () => <>&nbsp;|&nbsp;</>
+const StyledLink = (props) => <Link {...props} className = "LinkText"> {props.children}</Link>
 
 const NavLinks = () => {
     return (
         <div className="Links">
-            <Link to = "/">Classic</Link> <Divider/>
-            <Link to = "/">Hard Mode</Link> <Divider/>
-            <Link to = "/">Art by Category</Link> <Divider/>
-            <Link to = "/">Instructions</Link> <Divider/>
-            <Link to = "/">About</Link>
+            <StyledLink to = "/">Classic</StyledLink> <Divider/>
+            <StyledLink to = "/">Hard Mode</StyledLink> <Divider/>
+            <StyledLink to = "/">Art by Category</StyledLink> <Divider/>
+            <StyledLink to = "/">Instructions</StyledLink> <Divider/>
+            <StyledLink to = "/">About</StyledLink>
         </div>
     );
 }
