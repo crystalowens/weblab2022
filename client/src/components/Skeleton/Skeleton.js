@@ -8,6 +8,7 @@ import "./Skeleton.css";
 const GOOGLE_CLIENT_ID = "614951455943-9ndq92d918d5h755p5pm9fgm5epomn2g.apps.googleusercontent.com";
 // crystal made 1/10/22 614951455943-9ndq92d918d5h755p5pm9fgm5epomn2g.apps.googleusercontent.com
 const Skeleton = ({ userId, handleLogin, handleLogout }) => {
+  /*
   return (
     <>
       {userId ? (
@@ -43,6 +44,6 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
       <a href="http://weblab.to/get-started">Check out this getting started guide</a>
     </>
   );
+*/
 };
-
 export default Skeleton;
