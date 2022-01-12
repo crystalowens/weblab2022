@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Router } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
-import HomePage from "./HomePage/HomePage.js";
+import HomePage from "./pages/HomePage.js";
+import Game from "./pages/Game.js"
 
 import { get, post } from "../utilities";
 
@@ -42,7 +43,7 @@ const App = () => {
   return (
     <>
       <Router>
-        <HomePage path = "/"/>
+        <Game path = "/"/>
         <NotFound default />
       </Router>
     </>
