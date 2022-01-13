@@ -11,16 +11,18 @@
 }
 
 .Title{
-    font-size: 64px;
+    font-size: 32px;
+    margin: 0px;
     margin-right: 20px;
+    color: var(--light-grey);
 }
 
 .Links{
-    color:var(--white);
+    color:var(--light-grey);
     font-size: 32px;
 }
 
 .LinkText{
-    color:var(--white);
+    color:var(--light-grey);
     text-decoration: none;
 }
