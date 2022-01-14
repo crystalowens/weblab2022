@@ -20,6 +20,7 @@ const router = express.Router();
 
 //initialize socket
 const socketManager = require("./server-socket");
+const nft = require('./nft');
 
 router.post("/login", auth.login);
 router.post("/logout", auth.logout);
@@ -41,6 +42,13 @@ router.post("/initsocket", (req, res) => {
 // |------------------------------|
 // | write your API methods below!|
 // |------------------------------|
+
+router.get("/randomNFT", (req, res) => {
+
+  nft.randomNFT().then((randomNFT) =>{
+    res.send(randomNFT);;
+  });
+});
 
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
