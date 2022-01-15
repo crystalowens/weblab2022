@@ -3,6 +3,8 @@ import { Router } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
 import HomePage from "./pages/HomePage.js";
 import Game from "./pages/Game.js"
+import Profile from "./pages/Profile.js"
+
 
 import { get, post } from "../utilities";
 
@@ -43,7 +45,9 @@ const App = () => {
   return (
     <>
       <Router>
-        <Game path = "/"/>
+        <Game path = "/game/"/>
+        <HomePage path = "/"/>
+        <Profile path = "/profile/"></Profile>
         <NotFound default />
       </Router>
     </>

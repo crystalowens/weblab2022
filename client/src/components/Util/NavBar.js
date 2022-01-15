@@ -8,11 +8,10 @@ const StyledLink = (props) => <Link {...props} className = "LinkText"> {props.ch
 const NavLinks = () => {
     return (
         <div className="Links">
-            <StyledLink to = "/">Classic</StyledLink> <Divider/>
-            <StyledLink to = "/">Hard Mode</StyledLink> <Divider/>
-            <StyledLink to = "/">Art by Category</StyledLink> <Divider/>
-            <StyledLink to = "/">Instructions</StyledLink> <Divider/>
-            <StyledLink to = "/">About</StyledLink>
+            <StyledLink to = "/game/">Play Game</StyledLink> <Divider/>
+            <StyledLink to = "/">About</StyledLink> <Divider/>
+            <StyledLink to = "/">Leaderboard</StyledLink> <Divider/>
+            <StyledLink to = "/profile/">Profile</StyledLink> 
         </div>
     );
 }
@@ -20,7 +19,7 @@ const NavLinks = () => {
 const NavBar = () => {
     return (
         <div className="NavBar-container">
-            <h1 className="Title">Art vs NFT</h1>
+            <h1 className="Title"><a href="/">Art vs NFT</a></h1>
             <NavLinks path = "/"/>
         </div>
     );

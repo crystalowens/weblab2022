@@ -35,7 +35,7 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
         </li>
         <li>Change the Server CLIENT_ID to the same CLIENT_ID (auth.js)</li>
         <li>
-          Change the Database SRV (mongoConnectionURL) for Atlas (server.js). You got this in the
+          Change the Database SRV ("mongoConnection"URL) for Atlas (server.js). You got this in the
           MongoDB setup.
         </li>
         <li>Change the Database Name for MongoDB to whatever you put in the SRV (server.js)</li>

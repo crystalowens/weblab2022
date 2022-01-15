@@ -11,10 +11,28 @@
 }
 
 .Title{
+    /* We should make it a fancier font */
     font-size: 32px;
     margin: 0px;
     margin-right: 20px;
     color: var(--light-grey);
+}
+
+a:link { 
+    text-decoration: none; 
+    color: var(--light-grey); 
+}
+a:visited { 
+    text-decoration: none; 
+    color: var(--light-grey); 
+}
+a:hover { 
+    text-decoration: none; 
+    color: var(--light-grey); 
+}
+a:active { 
+    text-decoration: none; 
+    color: var(--light-grey); 
 }
 
 .Links{
