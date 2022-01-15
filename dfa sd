@@ -1,0 +1,41 @@
+[33mcommit 08d691a3fb9317e43d655a27dda3ebc93f53740f[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Crystal Owens <cryst@DESKTOP-FLL09SG.mit.edu>
+Date:   Fri Jan 14 20:49:03 2022 -0500
+
+    graphics, links, and profile
+
+[33mcommit e5576f76a2ca337676008d35d852f79293a5d2d6[m
+Author: Jblt <57819528+Zanic23@users.noreply.github.com>
+Date:   Wed Jan 12 20:40:19 2022 -0500
+
+    Minor Changes To colors
+
+[33mcommit 7f9bc1d29bc8e7ed66dfa470e5c404e5f4d36ca6[m
+Author: Jblt <57819528+Zanic23@users.noreply.github.com>
+Date:   Wed Jan 12 13:25:07 2022 -0500
+
+    Added basic images and navbar for the game page
+
+[33mcommit 9be9aed970c72a1b980242f4776df5178840c661[m
+Author: Jblt <57819528+Zanic23@users.noreply.github.com>
+Date:   Wed Jan 12 12:07:34 2022 -0500
+
+    Changed some file paths. started game page.
+
+[33mcommit 7866482bcc63f5f262a8532328e8f12829adbfe6[m
+Author: Jblt <57819528+Zanic23@users.noreply.github.com>
+Date:   Tue Jan 11 21:37:46 2022 -0500
+
+    Added Basic Home Page. Feel free to clean up code, its somewhat rough right now. Also Commented some of authentication code, as it was messing with the hotloader since we didnt have all the token ids set up
+
+[33mcommit ad3ce9da54d43f677348d865b21fb86f5a983f24[m
+Author: Crystal Owens <cryst@DESKTOP-FLL09SG.mit.edu>
+Date:   Mon Jan 10 21:09:11 2022 -0500
+
+    Skeleton code plus first 3 bullet points
+
+[33mcommit 39ec58656c08bcd18d584faa354b839825ae0949[m
+Author: Crystal Owens <cryst@DESKTOP-FLL09SG.mit.edu>
+Date:   Mon Jan 10 20:51:45 2022 -0500
+
+    Skeleton code
