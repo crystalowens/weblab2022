@@ -1,6 +1,6 @@
 
 .GameContent-container{
-    background-color: var(--backgroundcolor);
+    background-color: var(--backgroundColor);
     width: 100%;
     height: 100%;
     display: flex;
@@ -17,7 +17,7 @@
     flex-direction: column;
 }
 
-.ImageContainer2:hover{
+.ImageContainer:hover{
     border-color: var(--blue-highlight); 
     border-width: 5px;
     border-style: solid; 
@@ -36,4 +36,35 @@
 }
 .ImageContainer-description{
     color: var(--light-grey);
+}
+
+.ScoreCard{
+    color: var(--light-grey); 
+    position: absolute; 
+    bottom: 0; 
+    right: 0; 
+    font-size: 32pt; 
+    font-weight: bold; 
+    border-color: var(--light-grey); 
+    border-width: 2px;
+    margin: 10px; 
+    border-style: solid; 
+    padding: 10px; 
+    /* font-size:  */
+}
+
+.GameTimer{
+    color: var(--light-grey); 
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 32pt; 
+    font-weight: bold; 
+    border-color: var(--light-grey); 
+    border-width: 2px;
+    margin: 10px; 
+    border-style: solid; 
+    padding: 10px; 
+    /* font-size:  */
 }
