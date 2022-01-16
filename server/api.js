@@ -15,16 +15,16 @@ const router = express.Router();
 //initialize socket
 const socketManager = require("./server-socket");
 const nft = require('./nft');
+const scoring = require('./database/scoring.js');
 
 router.post("/login", auth.login);
 router.post("/logout", auth.logout);
 
+
 router.get("/whoami", (req, res) => {
   if (!req.user) {
-    // not logged in
-    return res.send({});
+    return res.send({});// not logged in
   }
-
   res.send(req.user);
 });
 
@@ -42,6 +42,18 @@ router.get("/randomNFT", (req, res) => {
   nft.randomNFT().then((randomNFT) =>{
     res.send(randomNFT);;
   });
+});
+
+router.post("/startgame", (req, res) => {
+  scoring.startGame(req.body.googleid);
+});
+
+router.post("/endGame", (req, res) => {
+  scoring.endGame(req.body.googleid);
+});
+
+router.post("/addscore", (req, res) => {
+  scoring.addToScore(req.body.increase, req.body.googleid);
 });
 
 // anything else falls to this "not found" case

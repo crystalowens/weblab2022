@@ -17,17 +17,17 @@ function verify(token) {
 }
 
 // gets user from DB, or makes a new account if it doesn't exist yet
-function getOrCreateUser(user) {
+function getOrCreateUser(userPayload) {
   // the "sub" field means "subject", which is a unique identifier for each user
-  return User.findOne({ googleid: user.sub }).then((existingUser) => {
+  return User.findOne({ googleid: userPayload.sub }).then((existingUser) => {
     if (existingUser) {
       return existingUser;
     }
 
     const newUser = new User({
-      name: user.name,
+      name: userPayload.name,
       highscore: 0,
-      googleid: user.sub,
+      googleid: userPayload.sub,
     })
     return newUser.save();
   });
@@ -35,7 +35,7 @@ function getOrCreateUser(user) {
 
 function login(req, res) {
   verify(req.body.token).then(
-      (googleUser) => getOrCreateUser(googleUser)
+      (googleUserPayload) => getOrCreateUser(googleUserPayload)
     ).then((mongoUser) => {
       // persist user in the session
       req.session.mongoUser = mongoUser;

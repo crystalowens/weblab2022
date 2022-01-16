@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./GameContent.css";
 import nft1 from "../../../images/bored-ape-1.jpg";
 import nft2 from "../../../images/bored-ape-2.jpg";
 import { get } from "../../utilities"
+import {startGame, endGame, addToScore} from "../../apicalls/game-score.js";
+import { UserIdContext } from "./UserIdContext";
 
 const ImageContainer = (props) => {
     let cssSize = null;
@@ -18,9 +20,11 @@ const ImageContainer = (props) => {
 }
 
 const GameContent = (props) => {
+    const {userId} = useContext(UserIdContext);
     const [gameScore, setGameScore] = useState(0); 
     const incrementScore = () => {
         setGameScore(gameScore + 1); 
+        addToScore(userId, 1);
         console.log(gameScore);
     }
     const checkGuess = () => {
@@ -30,8 +34,8 @@ const GameContent = (props) => {
     }
     const [gameTimer, setGameTimer] = useState(10);
     useEffect(() => {
-        console.log(gameScore);
-        console.log(gameScore+1);
+        startGame(userId);
+        console.log('Game score:', gameScore);
       }, []);
     
     return (
@@ -39,7 +43,7 @@ const GameContent = (props) => {
             <div className="ImagesSection">
                 <div className="NFTImages">
                     <div
-                        onClick = {checkGuess} // You can probably set this up cleaner
+                        onClick = {incrementScore} // You can probably set this up cleaner
                     >
                     <ImageContainer title = "NFT 1" description= "an nft" src={nft1}
                     /></div>
