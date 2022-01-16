@@ -34,6 +34,7 @@ async function randomNFT() {
 async function getNFTTransaction(tokenAddress) {
     const options = { address: tokenAddress, limit: "200" };
     const NFTTrades = await Moralis.Web3API.token.getNFTTrades(options);
+    //TODO: results can be 0, so possibly make a gaurd for that
     const results = NFTTrades.result;
     results.sort((lhs, rhs) => {
         const lhsDate = new Date(lhs.block_timestamp);
@@ -51,7 +52,7 @@ async function getNFTTransaction(tokenAddress) {
 
     const lastTransaction = results[0];
     return {
-        price : Moralis.Units.FromWei(lastTransaction.price),
+        price : (lastTransaction.price ? Moralis.Units.FromWei(lastTransaction.price) : undefined),
         sold : lastTransaction.block_timestamp
     };
 }

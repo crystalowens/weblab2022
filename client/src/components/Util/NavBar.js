@@ -1,44 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Router, Link } from "@reach/router";
+import { UserIdContext } from "./UserIdContext";
+import LoginButton from "./LoginButton";
 import "./NavBar.css";
-import GoogleLogin, { GoogleLogout } from "react-google-login";
-
-// This identifies your web application to Google's authentication service
-const GOOGLE_CLIENT_ID = "121479668229-t5j82jrbi9oejh7c8avada226s75bopn.apps.googleusercontent.com";
 
 const Divider = () => <>&nbsp;|&nbsp;</>
 const StyledLink = (props) => <Link {...props} className = "LinkText"> {props.children}</Link>
 
-const NavLinks = (props) => {
-    return (
-        <div className="Links">
-            <StyledLink to = "/game/">Play Game</StyledLink> <Divider/>
-            <StyledLink to = "/">About</StyledLink> <Divider/>
-            <StyledLink to = "/">Leaderboard</StyledLink> <Divider/>
-            <StyledLink to = "/profile/">Profile</StyledLink> <Divider/>
-            {props.userId && (
-            <StyledLink to={`/profile/${props.userId}`} className="NavBar-link">
+const NavLinks = () => {
+  const {userId} = useContext(UserIdContext);
+  return (
+      <div className="Links">
+          <StyledLink to = "/game/">Play Game</StyledLink> <Divider/>
+          <StyledLink to = "/">About</StyledLink> <Divider/>
+          <StyledLink to = "/">Leaderboard</StyledLink> <Divider/>
+          <StyledLink to = "/profile/">Profile</StyledLink> <Divider/>
+
+          {userId && (
+            <StyledLink to={`/profile/${userId}`} className="NavBar-link">
             Profile
             </StyledLink>
-            )}
-            {props.userId ? (
-          <GoogleLogout
-            clientId={GOOGLE_CLIENT_ID}
-            buttonText="Logout"
-            onLogoutSuccess={props.handleLogout}
-            onFailure={(err) => console.log(err)}
-          />
-        ) : (
-          <GoogleLogin
-            clientId={GOOGLE_CLIENT_ID}
-            buttonText="Login"
-            onSuccess={props.handleLogin}
-            onFailure={(err) => console.log(err)}
-            className="NavBar-link NavBar-login"
-          />
-        )}
-        </div>
-    );
+          )}
+
+          <LoginButton/>
+      </div>
+  );
 }
 
 const NavBar = () => {
