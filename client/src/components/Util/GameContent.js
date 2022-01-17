@@ -3,7 +3,7 @@ import "./GameContent.css";
 import nft1 from "../../../images/bored-ape-1.jpg";
 import nft2 from "../../../images/bored-ape-2.jpg";
 import { get } from "../../utilities"
-import {startGame, endGame, addToScore} from "../../apicalls/game-score.js";
+import {startGame, endGame, addToScore} from "../../apicalls/gameScore.js";
 import { UserIdContext } from "./UserIdContext";
 
 const ImageContainer = (props) => {

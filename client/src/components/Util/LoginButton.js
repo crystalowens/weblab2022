@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import GoogleLogin, { GoogleLogout } from "react-google-login";
 import {get, post} from "../../utilities.js"
 import { UserIdContext } from "./UserIdContext.js";
-import {socket} from "../../client-socket.js";
+//import {socket} from "../../client-socket.js";THIS IS WHERE SOCKET ERRORS ARE FROM
 // This identifies your web application to Google's authentication service
 const GOOGLE_CLIENT_ID = "614951455943-9ndq92d918d5h755p5pm9fgm5epomn2g.apps.googleusercontent.com";
 
@@ -14,7 +14,7 @@ function createSignInHandlers(setUserId){
     const userToken = res.tokenObj.id_token;
     post("/api/login", { token: userToken }).then((user) => {
       setUserId(user._id);
-      post("/api/initsocket", { socketid: socket.id });
+      //post("/api/initsocket", { socketid: socket.id }); needs import socket
     });
   };
 
