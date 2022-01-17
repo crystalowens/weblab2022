@@ -1,0 +1,81 @@
+[33mcommit 3ab5714b544d83f73300299724a431b429989213[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Jblt <57819528+Zanic23@users.noreply.github.com>
+Date:   Sun Jan 16 15:25:53 2022 -0500
+
+    Adds function calls for game sessions:
+    startGame, endGame, addToScore. Also, TODO: need to determine how to
+    retain user sessions after refresh
+
+[33mcommit 76c1852a5b120e88593a1ac1afb725922c9a45e3[m
+Author: Jblt <57819528+Zanic23@users.noreply.github.com>
+Date:   Sun Jan 16 13:47:29 2022 -0500
+
+    Moved some things around, refactoring.
+
+[33mcommit 9e02339a8ab3857dce8ee9d9458465b1700c568e[m
+Author: Crystal Owens <cryst@DESKTOP-FLL09SG.mit.edu>
+Date:   Sat Jan 15 00:25:10 2022 -0500
+
+    login button (not saving login yet) and gamescore
+
+[33mcommit e0e1d6e28e73dd0dc18e3974be41f2f24d23a41d[m
+Merge: 08d691a 694e906
+Author: Crystal Owens <cryst@DESKTOP-FLL09SG.mit.edu>
+Date:   Fri Jan 14 21:04:42 2022 -0500
+
+    graphics, links, and profile
+
+[33mcommit 08d691a3fb9317e43d655a27dda3ebc93f53740f[m
+Author: Crystal Owens <cryst@DESKTOP-FLL09SG.mit.edu>
+Date:   Fri Jan 14 20:49:03 2022 -0500
+
+    graphics, links, and profile
+
+[33mcommit 694e9066ef87b7db4a0b77bd6de16d6b9415b4b0[m
+Author: Jblt <57819528+Zanic23@users.noreply.github.com>
+Date:   Fri Jan 14 16:15:52 2022 -0500
+
+    Forgot to add nft.js
+
+[33mcommit 8a7ea617d26500be9d48140db1c30cb1191d122a[m
+Author: Jblt <57819528+Zanic23@users.noreply.github.com>
+Date:   Fri Jan 14 16:13:18 2022 -0500
+
+    Added nft api. call /api/randomNFT. Might have to
+    use "npm install moralis" to run the server
+
+[33mcommit e5576f76a2ca337676008d35d852f79293a5d2d6[m
+Author: Jblt <57819528+Zanic23@users.noreply.github.com>
+Date:   Wed Jan 12 20:40:19 2022 -0500
+
+    Minor Changes To colors
+
+[33mcommit 7f9bc1d29bc8e7ed66dfa470e5c404e5f4d36ca6[m
+Author: Jblt <57819528+Zanic23@users.noreply.github.com>
+Date:   Wed Jan 12 13:25:07 2022 -0500
+
+    Added basic images and navbar for the game page
+
+[33mcommit 9be9aed970c72a1b980242f4776df5178840c661[m
+Author: Jblt <57819528+Zanic23@users.noreply.github.com>
+Date:   Wed Jan 12 12:07:34 2022 -0500
+
+    Changed some file paths. started game page.
+
+[33mcommit 7866482bcc63f5f262a8532328e8f12829adbfe6[m
+Author: Jblt <57819528+Zanic23@users.noreply.github.com>
+Date:   Tue Jan 11 21:37:46 2022 -0500
+
+    Added Basic Home Page. Feel free to clean up code, its somewhat rough right now. Also Commented some of authentication code, as it was messing with the hotloader since we didnt have all the token ids set up
+
+[33mcommit ad3ce9da54d43f677348d865b21fb86f5a983f24[m
+Author: Crystal Owens <cryst@DESKTOP-FLL09SG.mit.edu>
+Date:   Mon Jan 10 21:09:11 2022 -0500
+
+    Skeleton code plus first 3 bullet points
+
+[33mcommit 39ec58656c08bcd18d584faa354b839825ae0949[m
+Author: Crystal Owens <cryst@DESKTOP-FLL09SG.mit.edu>
+Date:   Mon Jan 10 20:51:45 2022 -0500
+
+    Skeleton code

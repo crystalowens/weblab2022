@@ -68,6 +68,7 @@
     flex-grow: 1;
     flex-wrap: nowrap;
 }
+
 .HomePage-Row img {
     flex-grow: 1;
     height: 100%;

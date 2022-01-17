@@ -12,9 +12,9 @@ const NavLinks = () => {
   return (
       <div className="Links">
           <StyledLink to = "/game/">Play Game</StyledLink> <Divider/>
-          <StyledLink to = "/">About</StyledLink> <Divider/>
-          <StyledLink to = "/">Leaderboard</StyledLink> <Divider/>
-          <StyledLink to = "/profile/">Profile</StyledLink> <Divider/>
+          {/* <StyledLink to = "/">About</StyledLink> <Divider/> */}
+          {/* <StyledLink to = "/">Leaderboard</StyledLink> <Divider/> */}
+          {/* <StyledLink to = "/profile/">Profile</StyledLink> <Divider/> */}
 
           {userId && (
             <StyledLink to={`/profile/${userId}`} className="NavBar-link">
