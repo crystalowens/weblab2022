@@ -45,15 +45,18 @@ router.get("/randomNFT", (req, res) => {
 });
 
 router.post("/startgame", (req, res) => {
-  scoring.startGame(req.body.googleid);
+  if (!req.user) { console.log("Cant start game without User."); return; }
+  scoring.startGame(req.user._id);
 });
 
 router.post("/endGame", (req, res) => {
-  scoring.endGame(req.body.googleid);
+  if (!req.user) { console.log("Cant end game without User."); return; }
+  scoring.endGame(req.user._id);
 });
 
 router.post("/addscore", (req, res) => {
-  scoring.addToScore(req.body.increase, req.body.googleid);
+  if (!req.user) { console.log("Cant play game without User."); return; }
+  scoring.addToScore(req.body.increase, req.user._id).then((mongoGame) => res.sendStatus(200));
 });
 
 // anything else falls to this "not found" case

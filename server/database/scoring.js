@@ -1,36 +1,41 @@
 const User = require('../models/user.js');
 const Game = require('../models/game.js');
+const mongoose = require('mongoose');
 
-function getUser(googleid) {
-    return User.findOne({ googleid: googleid });
+function getUser(userId) {
+    console.log(`Retrieving User: ${userId}`);
+    return User.findOne({ _id: userId });
 }
 
-function getGame(googleid) {
-    return Game.findOne({ googleid: googleid });
+function getGame(userId) {
+    console.log(`Retrieving Game for: ${userId}`);
+    return Game.findOne({ userId: (userId) });
 }
 
-function addToScore(number, googleid){
-    getGame(googleid).then((mongoGame)=>{
-        mongoGame.score += 1;
-        mongoGame.save();
+function addToScore(number, userId){
+    return getGame(userId).then((mongoGame)=>{
+        console.log(`Mongo Game:${mongoGame}`);
+        console.log(`Adding Number: ${number}`);
+        const score = mongoGame.score;
+        mongoGame.score = score + number;
+        return mongoGame.save();
     });
 }
 
-function startGame(googleid) {
+function startGame(userId) {
     const game = new Game({
-        score: 0,
-        googleid:googleid
+        score: Number(0),
+        userId: userId
     });
-    game.save();
+    return game.save();
 }
 
-function endGame(googleid) {
-    getUser(googleid).then((mongoUser)=>{
-        getGame(googleid).then((mongoGame)=>{
+function endGame(userId) {
+    return getUser(userId).then((mongoUser)=>{
+        getGame(userId).then((mongoGame)=>{
             if(mongoGame.score > mongoUser.highscore){
                 mongoUser.highscore = mongoGame.score;
-                mongoUser.save();
-                Game.deleteMany({googleid:googleid});
+                return Promise.all([mongoUser.save(), Game.deleteMany({userId : userId})]);
             }
         });
     });

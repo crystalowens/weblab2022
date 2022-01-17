@@ -24,7 +24,7 @@ const GameContent = (props) => {
     const [gameScore, setGameScore] = useState(0); 
     const incrementScore = () => {
         setGameScore(gameScore + 1); 
-        addToScore(userId, 1);
+        addToScore(1);
         console.log(gameScore);
     }
     const checkGuess = () => {
@@ -34,7 +34,7 @@ const GameContent = (props) => {
     }
     const [gameTimer, setGameTimer] = useState(10);
     useEffect(() => {
-        startGame(userId);
+        startGame();
         console.log('Game score:', gameScore);
       }, []);
     

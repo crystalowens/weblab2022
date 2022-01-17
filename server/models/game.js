@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const GameSchema = new mongoose.Schema({
     score : Number,
-    googleid: String
+    userId : {type: mongoose.Schema.Types.ObjectId, ref: 'user'}
 });
 
 // compile model from schema

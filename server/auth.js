@@ -38,7 +38,7 @@ function login(req, res) {
       (googleUserPayload) => getOrCreateUser(googleUserPayload)
     ).then((mongoUser) => {
       // persist user in the session
-      req.session.mongoUser = mongoUser;
+      req.session.user = mongoUser;
       res.send(mongoUser);
     })
     .catch((err) => {

@@ -1,14 +1,14 @@
 import {get, post} from "../utilities.js";
 
-export function startGame(googleid){
+export function startGame(){
     console.log('Game Started');
-    return post("/api/startgame", {googleid:googleid});
+    return post("/api/startgame");
 }
 
-export function endGame(googleid){
-    return post("/api/endgame", {googleid:googleid});
+export function endGame(){
+    return post("/api/endgame");
 }
 
-export function addToScore(googleid, value){
-    return post("/api/addscore", {increase:value, googleid:googleid});
+export function addToScore(value){
+    return post("/api/addscore", {increase:value});
 }
