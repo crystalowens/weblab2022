@@ -16,7 +16,6 @@
 //TA-created to make sure project is in order
 const validator = require("./validator");
 validator.checkSetup();
-//require('dotenv').config();
 
 //Installed Libraries
 const express = require("express");
@@ -34,7 +33,7 @@ app.use(validator.checkRoutes);
 app.use(express.json()); // allow us to process POST requests
 app.use(  // set up a session, which will persist login data across requests
   session({
-    secret: "session-secret",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
   })

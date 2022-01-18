@@ -56,7 +56,9 @@ router.post("/endGame", (req, res) => {
 
 router.post("/addscore", (req, res) => {
   if (!req.user) { console.log("Cant play game without User."); return; }
-  scoring.addToScore(req.body.increase, req.user._id).then((mongoGame) => res.sendStatus(200));
+  scoring.addToScore(req.body.increase, req.user._id).then(
+    (mongoGame) => res.sendStatus(200)
+  );
 });
 
 // anything else falls to this "not found" case
