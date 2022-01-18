@@ -31,6 +31,16 @@
   --l: 24px;
 }
 
+.YellowFill{
+  background-color: var(--yellow-highlight);
+}
+.YellowBorder{
+  border-radius: var(--l);
+  border: var(--s);
+  border-style: solid;
+  border-color: var(--yellow-highlight);
+}
+
 body {
   margin: 0;
   padding: 0;

@@ -23,9 +23,9 @@ function getOrCreateUser(userPayload) {
     if (existingUser) {
       return existingUser;
     }
-
     const newUser = new User({
-      name: userPayload.name,
+      username: userPayload.name,
+      picture : userPayload.picture,
       highscore: 0,
       googleid: userPayload.sub,
     })

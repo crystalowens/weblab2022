@@ -5,6 +5,7 @@ import nft2 from "../../../images/bored-ape-2.jpg";
 import { get } from "../../utilities"
 import {startGame, endGame, addToScore} from "../../apicalls/gameScore.js";
 import { UserIdContext } from "./UserIdContext";
+import Rules from "./Rules.js";
 
 const ImageContainer = (props) => {
     let cssSize = null;
@@ -54,13 +55,14 @@ const GameContent = (props) => {
                     </div>
                 </div>
                 <div>
-                <div className = "GameTimer">Time remaining: {gameTimer} </div>
+                <div className = "GameTimer YellowBorder">Time remaining: {gameTimer} </div>
                 <ImageContainer title = "Mona Lisa" description= "100 million dollar painting" 
                     src={nft2} size = {{width:'500px', height:'500px'}}/>
                 </div>
             </div>
-            <div className = "ScoreCard">
-            <div>Score: {gameScore} </div>
+            <Rules className="RuleCard"/>
+            <div className = "ScoreCard YellowBorder">
+                <div>Score: {gameScore} </div>
             </div>
         </div>
     );

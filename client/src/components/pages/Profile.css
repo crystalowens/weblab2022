@@ -1,7 +1,9 @@
 .ProfilePage {
-    background-color: var(--backgroundColor);
-    color: var(--light-grey);
-  }
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--backgroundColor);
+  color: var(--light-grey);
+}
 
   .Profile-avatarContainer {
     padding: 0 35%;
@@ -41,6 +43,7 @@
   }
   
   .Profile-subContainer {
+    height: 100%;
     flex-grow: 1;
     flex-basis: 0;
   }

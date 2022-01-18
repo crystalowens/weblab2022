@@ -44,3 +44,8 @@ a:active {
     color:var(--light-grey);
     text-decoration: none;
 }
+
+.Highlight-bar {
+    width: 100vw;
+    height: var(--s);
+}

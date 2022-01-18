@@ -16,10 +16,13 @@ const NavLinks = () => {
           {/* <StyledLink to = "/">Leaderboard</StyledLink> <Divider/> */}
           {/* <StyledLink to = "/profile/">Profile</StyledLink> <Divider/> */}
 
-          {userId && (
-            <StyledLink to={`/profile/${userId}`} className="NavBar-link">
-            Profile
-            </StyledLink>
+          {userId && /*in the future add profiles to everyone/${userId}*/(
+              <> 
+                <StyledLink to={`/profile`} className="NavBar-link">
+                Profile
+                </StyledLink>
+                <Divider/>
+            </>
           )}
 
           <LoginButton/>
@@ -29,10 +32,13 @@ const NavLinks = () => {
 
 const NavBar = () => {
     return (
-        <div className="NavBar-container">
-            <h1 className="Title"><a href="/">Art vs NFT</a></h1>
-            <NavLinks path = "/"/>
-        </div>
+        <>
+            <div className="NavBar-container">
+                <h1 className="Title"><a href="/">Art vs NFT</a></h1>
+                <NavLinks path = "/"/>
+            </div>
+            <div className="Highlight-bar YellowFill"></div>
+        </>
     );
 }
 
