@@ -15,6 +15,10 @@ function randomElement(array){
     return array[Math.floor(Math.random()*array.length)];
 }
 
+function randomPrice() {
+    return Math.floor(Math.random() * 5);
+}
+
 async function randomNFT() {
     const nfts = await Moralis.Web3API.token.searchNFTs({
         q: randomElement(queries),
@@ -24,14 +28,14 @@ async function randomNFT() {
     if(!nft) {
         return randomNFT();
     }
-    const transaction = await getNFTTransaction(nft.token_address);
+    //const transaction = await getNFTTransaction(nft.token_address);
     const nftMetaData = JSON.parse(nft.metadata);
     return verifyValidNFT({
         name : nftMetaData.name,
         description : nftMetaData.description,
         image : nftMetaData.image,
-        price : transaction.price,
-        sold : transaction.sold
+        price : randomPrice(),
+        sold : Date.now().toString()
     });
 }
 

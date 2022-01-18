@@ -1,11 +1,11 @@
 import {post} from "../util/utilities.js";
 
-export function startGame(){
+export function createGame(){
     console.log('Game Started');
     return post("/api/startgame");
 }
 
-export function endGame(){
+export function finishGame(){
     return post("/api/endgame");
 }
 

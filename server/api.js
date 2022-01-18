@@ -41,23 +41,30 @@ router.post("/initsocket", (req, res) => {
 router.get("/randomNFT", (req, res) => {
   nft.randomNFT().then((randomNFT) =>{
     res.send(randomNFT);;
+  }).catch((error) => {
+    console.log(`Unable to get NFT: ${error}`);
   });
 });
 
 router.post("/startgame", (req, res) => {
   if (!req.user) { console.log("Cant start game without User."); return; }
-  scoring.startGame(req.user._id);
+  scoring.startGame(req.user._id).then((mongoGame) => {
+    res.status(200).send({msg: "Started Game"});
+    console.log('game has started');
+  });
 });
 
 router.post("/endGame", (req, res) => {
   if (!req.user) { console.log("Cant end game without User."); return; }
-  scoring.endGame(req.user._id);
+  scoring.endGame(req.user._id).then(
+    (mongoGame) => res.status(200).send({msg: "Ended Game"})
+  );
 });
 
 router.post("/addscore", (req, res) => {
   if (!req.user) { console.log("Cant play game without User."); return; }
   scoring.addToScore(req.body.increase, req.user._id).then(
-    (mongoGame) => res.sendStatus(200)
+    (mongoGame) => res.status(200).send({msg: `Added ${req.body.increase} to score`})
   );
 });
 
