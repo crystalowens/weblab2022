@@ -63,7 +63,7 @@ const Game = () => {
                 <GameStage timeLeft ={10} score = {round} 
                     leftNft = {leftNft} rightNft = {rightNft}
                     onCorrect = {onCorrect} onFailure={onFailure}/>
-                <HowToPlay/>
+                <HowToPlay reactClassName="HowToPlay"/>
             </div>
         </Page>
     );

@@ -9,10 +9,6 @@
     align-items: center;
     justify-content: space-evenly;
 }
-
-.Timer{
-    flex-grow: 1;
-}
 .GameInfo {
     display: flex;
     width: calc(100% - 40px);
@@ -26,3 +22,13 @@
     width: 75vw;
 }
 
+/*Cards*/
+
+.Timer{
+    flex-grow: 1;
+}
+.HowToPlay{
+    font-size: 24px;
+    width: 15vw;
+    height: min-content;
+}

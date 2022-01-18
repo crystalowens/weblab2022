@@ -11,7 +11,7 @@ import "./Images.css";
 
 const loadingNFT = () => {
     return {
-        title: "Loading Nft...",
+        name: "Loading Nft...",
         description : "",
         image : "https://imgix.ranker.com/user_node_img/50012/1000224926/original/charcoal-photo-u1",
         price : 0,
@@ -19,12 +19,26 @@ const loadingNFT = () => {
     };
 }
 
-const NFTInfomatic = ({title, description, date}) => {
+const clipText = (str, characters) => {
+    if(!str) return "";
+    if (str.length  > characters - 3) {
+        return str.substring(0, characters - 3) + '...';
+    }else{
+        return str;
+    }
+}
+
+const formatDate = (date) => {
+    const options = {weekday : 'long', year: 'numeric', month: 'long', day: 'numeric'};
+    return new Date(date).toLocaleDateString("en-US", options);
+}
+
+const NFTInfomatic = ({name, description, date}) => {
     return (
         <div className="Infomatic">
-            <p className="InfomaticTitle"><span className="InfomaticHeader">Title: </span>{title}</p>
-            <p><span className="InfomaticHeader">Sold On: </span>{date}</p>
-            <p className="InfomaticDescription">{description}</p>
+            <p className="InfomaticTitle"><span className="InfomaticHeader">Title: </span>{clipText(name, 50)}</p>
+            <p><span className="InfomaticHeader">Sold On: </span>{clipText(date, 50)}</p>
+            <p className="InfomaticDescription">{clipText(description, 200)}</p>
         </div>
     );
 }
@@ -34,12 +48,11 @@ const AnnotatedNFT = ({nft, onClick}) => {
         onClick = () => {};
         nft = loadingNFT();
     }
-    const formattedDate = Date(nft.sold).toString();
-    const size = { width: 400, height: 400 };
+    const size = { width: 500, height: 500 };
     return (
         <div className="AnnotatedNFT">
             <ClickableImage link = {nft.image} onClick={onClick} size={size}/>
-            <NFTInfomatic title={nft.title} description={nft.description} date={formattedDate}/>
+            <NFTInfomatic name={nft.name} description={nft.description} date={formatDate(nft.date)}/>
         </div>
     );
 }

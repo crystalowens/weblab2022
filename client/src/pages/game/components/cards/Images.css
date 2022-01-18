@@ -1,4 +1,5 @@
 
+/*TEXT Infomatic styling*/
 .Infomatic {
     color: var(--light-grey);
     font-size: 16pt;
@@ -10,11 +11,17 @@
 .InfomaticTitle{
     font-size: 24pt;
 }
-.InfomaticDescription{}
+/*Image containers: Individual and both*/
 
 .AnnotatedNFT{
+    width: 50%;
+    height: 100%;
+
     padding: 20px;
     margin: 20px;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .Images {
