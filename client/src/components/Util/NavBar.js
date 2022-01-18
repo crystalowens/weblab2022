@@ -12,10 +12,8 @@ const NavLinks = () => {
   return (
       <div className="Links">
           <StyledLink to = "/game/">Play Game</StyledLink> <Divider/>
-          {/* <StyledLink to = "/">About</StyledLink> <Divider/> */}
+          {/* <StyledLink to = "/about">About</StyledLink> <Divider/> */}
           {/* <StyledLink to = "/">Leaderboard</StyledLink> <Divider/> */}
-          {/* <StyledLink to = "/profile/">Profile</StyledLink> <Divider/> */}
-
           {userId && /*in the future add profiles to everyone/${userId}*/(
               <> 
                 <StyledLink to={`/profile`} className="NavBar-link">

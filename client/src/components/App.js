@@ -4,6 +4,7 @@ import NotFound from "./pages/NotFound.js";
 import HomePage from "./pages/HomePage.js";
 import Game from "./pages/Game.js"
 import Profile from "./pages/Profile.js"
+import About from "./pages/About.js"
 import { UserIdContext } from "./Util/UserIdContext.js";
 
 // import { socket } from "../client-socket.js";
@@ -31,6 +32,7 @@ const App = () => {
       <Router>
           <Game path = "/game/"/>
           <HomePage path = "/"/>
+          <About path = "/about"/>
           <Profile path = "/profile/"></Profile>
           <NotFound default />
       </Router>

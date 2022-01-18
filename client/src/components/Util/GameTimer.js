@@ -9,7 +9,8 @@ import "./GameTimer.css";
  */
 
 const GameTimer = (props) => {
-  return (
+
+    return (
     <div>
         <div className = "GameTimer YellowBorder">Time remaining: {props.gameTimer} </div>
     </div>
