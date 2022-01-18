@@ -1,0 +1,12 @@
+
+.Card{
+    color: var(--light-grey); 
+    
+    height: min-content;
+    align-self: center;
+    font-size: 32pt; 
+    font-weight: bold; 
+    
+    margin: 10px; 
+    padding: 10px; 
+}

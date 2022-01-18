@@ -1,0 +1,22 @@
+
+.Infomatic {
+    color: var(--light-grey);
+    font-size: 16pt;
+}
+.InfomaticHeader {
+    font-weight: bold;
+}
+
+.InfomaticTitle{
+    font-size: 24pt;
+}
+.InfomaticDescription{}
+
+.AnnotatedNFT{
+    padding: 20px;
+    margin: 20px;
+}
+
+.Images {
+    display: flex;
+}

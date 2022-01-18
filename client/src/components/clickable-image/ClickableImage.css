@@ -1,0 +1,10 @@
+
+
+.ClickableImage {
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.ClickableImage:hover{
+    outline: 10px solid var(--yellow-highlight);
+}
