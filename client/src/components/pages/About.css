@@ -1,0 +1,31 @@
+.AboutPage {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--backgroundColor);
+    color: var(--light-grey);
+  }
+  
+    .About-title {
+      font-size: 40px;
+      font-weight: 300;
+      font-family:cursive; 
+    }
+    
+    .About-subContainer {
+      height: 100%;
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+        
+    .About-text {
+      font-weight: 300;
+      font-size: 24px;
+      margin: var(--m) var(--s);
+    }
+
+    .About-hovercontrol {
+        color: var(--backgroundColor);
+    }
+.About-hovercontrol:hover {
+    color: var(--light-grey);
+}
