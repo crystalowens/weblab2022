@@ -1,28 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { Router } from "@reach/router";
-import NotFound from "./pages/NotFound.js";
-import HomePage from "./pages/HomePage.js";
-import Game from "./pages/Game.js"
-import Profile from "./pages/Profile.js"
-import About from "./pages/About.js"
-import { UserIdContext } from "./Util/UserIdContext.js";
-
+//PAGE IMPORTS
+import HomePage from "../pages/home-page/HomePage.js";
+import Game from "../pages/game/Game.js"
+import Profile from "../pages/profile/Profile.js"
+import About from "../pages/about/About.js"
+import NotFound from "../pages/not-found/NotFound.js";
+//CONTEXT IMPORTS
+import { UserIdContext } from "../contexts/UserIdContext.js";
+//SERVICE IMPORTS
+import {getUser} from "../services/userSession.js";
 // import { socket } from "../client-socket.js";
 
-import { get, post } from "../utilities";
-
-import "../utilities.css";
+import "../util/utilities.css";
 
 const App = () => {
 
   const [userId, setUserId] = useState(undefined);
 
   useEffect(() => {
-     get("/api/whoami").then((user) => {
-       if (user._id) {
-         // they are registed in the database, and currently logged in.
-         setUserId(user._id);
-       }
+     getUser().then((user) => {
+       if (user._id) setUserId(user._id);
      });
   }, []);
 
@@ -30,10 +28,10 @@ const App = () => {
     <>
     <UserIdContext.Provider value = {{userId, setUserId}}>
       <Router>
-          <Game path = "/game/"/>
           <HomePage path = "/"/>
+          <Game path = "/game/"/>
+          <Profile path = "/profile/"/>
           <About path = "/about"/>
-          <Profile path = "/profile/"></Profile>
           <NotFound default />
       </Router>
     </UserIdContext.Provider>

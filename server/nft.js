@@ -21,7 +21,9 @@ async function randomNFT() {
         limit: 25
     });
     const nft = randomElement(nfts.result);
-
+    if(!nft) {
+        return randomNFT();
+    }
     const transaction = await getNFTTransaction(nft.token_address);
     const nftMetaData = JSON.parse(nft.metadata);
     return verifyValidNFT({
@@ -34,7 +36,7 @@ async function randomNFT() {
 }
 
 async function getNFTTransaction(tokenAddress) {
-    const options = { address: tokenAddress, limit: "200" };
+    const options = { address: tokenAddress, limit: "20" };
     const NFTTrades = await Moralis.Web3API.token.getNFTTrades(options);
     //TODO: results can be 0, so possibly make a gaurd for that
     const results = NFTTrades.result;
@@ -51,12 +53,19 @@ async function getNFTTransaction(tokenAddress) {
             return -1;
         }
     });
-
     const lastTransaction = results[0];
-    return {
-        price : (lastTransaction.price ? Moralis.Units.FromWei(lastTransaction.price) : undefined),
-        sold : lastTransaction.block_timestamp
-    };
+    if(!lastTransaction){
+        return {
+            price : 0,
+            sold: Date.now().toString()
+        };
+    }
+    else{
+        return {
+            price : (lastTransaction.price ? Moralis.Units.FromWei(lastTransaction.price) : undefined),
+            sold : lastTransaction.block_timestamp
+        };
+    }
 }
 
 async function verifyValidNFT(nft){
