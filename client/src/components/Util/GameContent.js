@@ -6,6 +6,8 @@ import { get } from "../../utilities"
 import {startGame, endGame, addToScore} from "../../apicalls/gameScore.js";
 import { UserIdContext } from "./UserIdContext";
 import Rules from "./Rules.js";
+import GameImages from "./GameImages.js";
+import GameTimer from "./GameTimer.js"; 
 
 const ImageContainer = (props) => {
     let cssSize = null;
@@ -34,6 +36,12 @@ const GameContent = (props) => {
         // game over or generate new image set 
     }
     const [gameTimer, setGameTimer] = useState(10);
+
+    const countDown = () => {
+        setGameTimer(gameTimer - 1); 
+        console.log(gameTimer);
+    }
+    
     useEffect(() => {
         startGame();
         console.log('Game score:', gameScore);
@@ -41,23 +49,13 @@ const GameContent = (props) => {
     
     return (
         <div className="GameContent-container">
-            <div className="ImagesSection">
-                <div className="NFTImages">
-                    <div
-                        onClick = {incrementScore} // You can probably set this up cleaner
-                    >
-                    <ImageContainer title = "NFT 1" description= "an nft" src={nft1}
-                    /></div>
-                    <div
-                        onClick = {checkGuess}
-                    >
-                    <ImageContainer title = "NFT 2" description= "an nft" src={nft2}/>
-                    </div>
-                </div>
+            <div>
+                <GameImages/>
+                {/* <div className = "GameTimer YellowBorder">Time remaining: {gameTimer} </div> */}
                 <div>
-                <div className = "GameTimer YellowBorder">Time remaining: {gameTimer} </div>
-                <ImageContainer title = "Mona Lisa" description= "100 million dollar painting" 
-                    src={nft2} size = {{width:'500px', height:'500px'}}/>
+                <GameTimer gameTimer={gameTimer}
+                onClick = {countDown}
+                />
                 </div>
             </div>
             <Rules className="RuleCard"/>
