@@ -1,7 +1,9 @@
 const Moralis = require('moralis/node');
 
-const serverUrl = "https://7jemkwprluhc.usemoralis.com:2053/server";
-const appId = "4pKw8tEBb0Gvjt3yYtuYqveXnQKmpmLTIKqNZEQm";
+const serverUrl = process.env.NFT_SERVER_URL;
+const appId = process.env.NFT_APP_ID;
+console.log(serverUrl);
+
 Moralis.start({ serverUrl, appId });;
 
 const queries = ['Bored Ape Yacht Club', 'Doodles', 

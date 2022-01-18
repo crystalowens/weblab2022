@@ -1,7 +1,7 @@
 // Server configuration below
 const mongoose = require('mongoose');
 
-const mongoConnectionURL = "mongodb+srv://admin:123@firstcluster.vt0fr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const mongoConnectionURL = process.env.MONGO_CONNECTION_URL;
 const databaseName = "FirstCluster";
 
 function startMongo(){
