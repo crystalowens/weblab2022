@@ -1,12 +1,10 @@
 import React from "react";
 import {useState, useEffect} from "react";
-import ClickableImage from "../../../../components/clickable-image/ClickableImage";
+import ClickableImage from "../../../components/clickable-image/ClickableImage";
 
-import nft1 from "../../../../resources/images/bored-ape-1.jpg";
-import {getUser} from "../../../../services/userSession.js";
-import {getRandomNFT} from "../../../../services/nft.js";
+import {getUser} from "../../../services/userSession.js";
+import {getRandomNFT} from "../../../services/nft.js";
 
-import "../GameContent.css";
 import "./Images.css";
 
 const loadingNFT = () => {

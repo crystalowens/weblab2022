@@ -7,35 +7,25 @@ import { addToScore, finishGame, createGame } from "../../services/gameSession.j
 import HowToPlay from "./components/cards/HowToPlay.js";
 import Start from "./components/cards/Start.js";
 import Restart from "./components/cards/Restart.js";
-import Images from "./components/cards/Images.js";
+import Images from "./components/Images.js";
 import Timer from "../../components/timer/Timer.js"; 
 import Score from "../../components/score/Score.js"; 
 
 import "./Game.css";
 import { UserIdContext } from "../../contexts/UserIdContext.js";
 
-const StartState = ({onStart, onRestart}) => {
-    //true means we need to start. false means we can restart
-    const [startState, setStartState] = useState(true);
-    const switchStartState = (callback) => {
-        return () => {
-            setStartState(startState => !startState);
-            callback();
-        }
-    }
-    if (startState) {
-        return (<Start onClick = {switchStartState(onStart)}/>);
-    }
-    else{
-        return (<Restart onClick = {switchStartState(onRestart)}/>);
-    }
+const StartState = ({isStart, onStart, onRestart}) => {
+    return (isStart ? 
+        (<Start onClick = {onStart}/>) : 
+        ((<Restart onClick = {onRestart}/>)
+    ));
 }
 
-const GameInfo = ({timeLeft, score, onStart, onRestart}) => {
+const GameInfo = ({timeLeft, score, isStart, onStart, onRestart}) => {
     return (
         <div className = "GameInfo">
             <Timer reactClassName="Timer" timeLeft={timeLeft}/>
-            <StartState onStart={onStart} onRestart={onRestart}/>
+            <StartState isStart = {isStart} onStart={onStart} onRestart={onRestart}/>
             <Score score={score}/>
         </div>
     );
@@ -45,7 +35,7 @@ const GameStage = (props) => {
     return (
         <div className="GameStage">
             <GameInfo timeLeft={props.timeLeft} score={props.score} 
-                onStart={props.onStart} onRestart={props.onRestart}/>
+                isStart = {props.isStart} onStart={props.onStart} onRestart={props.onRestart}/>
             <Images leftNft={props.leftNft} rightNft={props.rightNft} 
                 onCorrect={props.onCorrect} onFailure={props.onFailure}/>
         </div>
@@ -54,18 +44,24 @@ const GameStage = (props) => {
 
 const Game = () => {
     const {userId} = useContext(UserIdContext);
+    const isLoggedIn = () => Boolean(userId); 
+
     const [leftNft, setLeftNft] = useState(null);
     const [rightNft, setRightNft] = useState(null);
-    const [timeLeft, setTimeLeft] = useState(10);
+
     const [round, setRound] = useState(0);
-    const [shouldPause, setShouldPause] = useState(false);
-    /*
+    const [timeLeft, setTimeLeft] = useState(10);
+    const [timerActivated, setTimerActivated] = useState(false);
+    const [isInGame, setIsInGame] = useState(false);
+
     useEffect(() => {
-        if(timeLeft === 0 && !shouldPause) return;
-        setTimeout(() => setTimeLeft(x => x - 1), 1000);
-    }, [timeLeft, shouldPause]);
-    */
-    const isLoggedIn = () => Boolean(userId); 
+        if(timeLeft === 0) return;
+        setTimeout(() => {
+            if(timerActivated) 
+                setTimeLeft(timeLeft => timeLeft - 1);
+        }, 1000);
+    }, [timeLeft, timerActivated]);
+
     const newNfts = () => {
         setLeftNft(null); setRightNft(null);
         return Promise.all([
@@ -74,38 +70,28 @@ const Game = () => {
         ]);
     }    
     
-    const startCountDown = () => {
-        const countDown = (timeLeft) => {
-            if(timeLeft == 0 || shouldPause){
-                return;
-            }
-            timeLeft--;
-            setTimeLeft(timeLeft => timeLeft - 1);
-            setTimeout(countDown, 1000, timeLeft);
-        };
-        setTimeout(countDown, 1000, timeLeft);
-    }
-    
     const initializeRound = () => {
-        setShouldPause(true);
+        setTimerActivated(false);
         setTimeLeft(10);
         newNfts().then(() => {
-            setShouldPause(false);
-            startCountDown();
+            setTimerActivated(true);
         });
     }
 
     const start = () => {
         if(isLoggedIn()){
             createGame().then(() => {
-                setRound(0);
                 initializeRound();
+                setIsInGame(true);
+                setRound(0);
             });
         }
         else{
-            setRound(0);
             initializeRound();
+            setIsInGame(true);
+            setRound(0);
         }
+
     }
     const nextRound = () => {
         initializeRound();
@@ -114,24 +100,26 @@ const Game = () => {
             addToScore(1);
     }
     const end = () => {
+        setTimerActivated(false); 
+        setIsInGame(false);
         if(isLoggedIn()) 
             finishGame();
     }
 
     //all events that are happening
-    const [isInGame, setIsInGame] = useState(false);
-    const onStart = () => { start(); setIsInGame(true); }
-    const onRestart = () => { if(isInGame) { end(); } start(); setIsInGame(true); }
-    const onCorrect = () => { if(isInGame) nextRound(); }
-    const onFailure = () => { end(); setShouldPause(true); setIsInGame(false); }
-    useEffect(()=> { return () => { if(isInGame) {end();} setIsInGame(false); }}, []);;
+    const onStart = () => { start(); }
+    const onRestart = () => { if(isInGame) { end(); } start(); }
+    const onCorrect = () => { if(isInGame) { nextRound(); }}
+    const onFailure = () => { if(isInGame) { end(); }}
+
+    useEffect(()=> { return () => { if(isInGame) {end();} }}, []);;
     return (
         <Page>
             <div className="Game">
                 <GameStage timeLeft ={timeLeft} score = {round} 
                     leftNft = {leftNft} rightNft = {rightNft}
                     onCorrect = {onCorrect} onFailure={onFailure}
-                    onStart={onStart} onRestart={onRestart}/>
+                    isStart = {!isInGame} onStart={onStart} onRestart={onRestart}/>
                 <HowToPlay reactClassName="HowToPlay"/>
             </div>
         </Page>

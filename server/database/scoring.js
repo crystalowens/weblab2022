@@ -44,5 +44,6 @@ function endGame(userId) {
 module.exports = {
     addToScore : addToScore,
     startGame : startGame,
-    endGame : endGame
+    endGame : endGame,
+    getUser : getUser
 };

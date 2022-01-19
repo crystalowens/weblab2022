@@ -68,6 +68,13 @@ router.post("/addscore", (req, res) => {
   );
 });
 
+router.get("/getuser", (req, res) => {
+  if (!req.user) { console.log("Cant find user."); return; }
+  scoring.getUser(req.user._id).then(
+    (mongoUser) => res.status(200).send(mongoUser)
+  );
+});
+
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
   console.log(`API route not found: ${req.method} ${req.url}`);

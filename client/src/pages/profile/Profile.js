@@ -18,8 +18,8 @@ const Profile = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
        getUser().then((user)=> {
+        console.log(user);
         setUser(user);
-        console.log('set user profile');
        });
   }, []);
 
