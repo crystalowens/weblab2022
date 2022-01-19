@@ -50,14 +50,14 @@ const AnnotatedNFT = ({nft, onClick}) => {
     return (
         <div className="AnnotatedNFT">
             <ClickableImage link = {nft.image} onClick={onClick} size={size}/>
-            <NFTInfomatic name={nft.name} description={nft.description} date={formatDate(nft.date)}/>
+            <NFTInfomatic name={nft.name} description={nft.description} date={formatDate(nft.sold)}/>
         </div>
     );
 }
 
 const Images = ({leftNft, rightNft, onCorrect, onFailure}) => {
-    const onLeftImageClick = () => { leftNft.price > rightNft.price ? onCorrect() : onFailure(); }
-    const onRightImageClick = () => { leftNft.price < rightNft.price ? onCorrect() : onFailure(); }
+    const onLeftImageClick = () => { leftNft.price >= rightNft.price ? onCorrect() : onFailure(); }
+    const onRightImageClick = () => { leftNft.price <= rightNft.price ? onCorrect() : onFailure(); }
     return (
         <div className="Images">
         <AnnotatedNFT nft = {leftNft} onClick={onLeftImageClick}/>

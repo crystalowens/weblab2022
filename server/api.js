@@ -10,6 +10,7 @@
 const express = require("express");
 // import authentication library
 const auth = require("./auth");
+const util = require('util');
 const router = express.Router();
 
 //initialize socket
@@ -42,7 +43,7 @@ router.get("/randomNFT", (req, res) => {
   nft.randomNFT().then((randomNFT) =>{
     res.send(randomNFT);;
   }).catch((error) => {
-    console.log(`Unable to get NFT: ${error}`);
+    console.log(`Unable to get NFT: ${util.inspect(error, {depth: null})}`);
   });
 });
 
@@ -50,7 +51,6 @@ router.post("/startgame", (req, res) => {
   if (!req.user) { console.log("Cant start game without User."); return; }
   scoring.startGame(req.user._id).then((mongoGame) => {
     res.status(200).send({msg: "Started Game"});
-    console.log('game has started');
   });
 });
 

@@ -14,10 +14,8 @@ function getGame(userId) {
 
 function addToScore(number, userId){
     return getGame(userId).then((mongoGame)=>{
-        console.log(`Mongo Game:${mongoGame}`);
-        console.log(`Adding Number: ${number}`);
-        const score = mongoGame.score;
-        mongoGame.score = score + number;
+        console.log(`Adding ${number} to Mongo Game:${mongoGame}`);
+        mongoGame.score += number;
         return mongoGame.save();
     });
 }

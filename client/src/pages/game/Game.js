@@ -65,7 +65,7 @@ const Game = () => {
     const newNfts = () => {
         setLeftNft(null); setRightNft(null);
         return Promise.all([
-            getRandomNFT().then((nft) => setLeftNft(nft)),
+            getRandomNFT().then((nft) => { console.log(nft);setLeftNft(nft);}),
             getRandomNFT().then((nft) => setRightNft(nft))
         ]);
     }    
