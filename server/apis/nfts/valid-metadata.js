@@ -57,7 +57,7 @@ function formatMetadata(metadata, token_uri){
     const format = findMetadataFormat(token_uri);
     return {
         name : metadata[format.name],
-        description : fixNoDescription([format.description]),
+        description : fixNoDescription(metadata[format.description]),
         image : fixIfpsFormat(metadata[format.image])
     };
 }

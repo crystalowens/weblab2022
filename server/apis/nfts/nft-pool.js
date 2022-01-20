@@ -30,7 +30,7 @@ const nftPool = [];
 
 async function randomMoralisNft(){
     const nft = randomElement(nftPool);
-    console.log(`Picked random nft: ${nft.tokenAddress}, id: ${nft.tokenId}, uri: ${nft.tokenUri.substring(0, 10)}...`);
+    console.log(`Picked random nft: ${nft.tokenAddress}, id: ${nft.tokenId}, uri: ${nft.tokenUri.substring(0, 100)}...`);
     return nft;
 
 }

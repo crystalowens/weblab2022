@@ -5,7 +5,7 @@ const debug = require('../../util/debug.js');
 async function mostRecentPurchase(nft){
     const transactions = await moralis.transfers(nft.tokenAddress, nft.tokenId);
     if(transactions.total == 0){
-        return { price : 0, sold : Date.now() };
+        return { value : 0, sold : Date.now() };
     }
     transactions.result.sort((lhs, rhs) => {
         const lhsDate = new Date(lhs.block_timestamp);
@@ -21,10 +21,10 @@ async function getPricing(nft) {
     const lastPurchase = await mostRecentPurchase(nft); 
     if(!lastPurchase.block_timestamp) 
         throw 'Could Not find prices';
-    if(lastPurchase.price == null)
-        lastPurchase.price = 0;
+    if(lastPurchase.value == null)
+        lastPurchase.value = 0;
     return {
-        price : moralis.convertWeiToEth(lastPurchase.price),
+        price : moralis.convertWeiToEth(lastPurchase.value),
         sold : lastPurchase.block_timestamp
     };
 }
