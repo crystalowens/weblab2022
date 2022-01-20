@@ -1,6 +1,6 @@
 
 const http = require("http");
-const socketManager = require("./server-socket");
+const socketManager = require("./sockets/server-socket");
 
 function startServer(app, port = 3000){
     const server = http.Server(app);

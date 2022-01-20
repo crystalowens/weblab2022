@@ -14,9 +14,9 @@ const util = require('util');
 const router = express.Router();
 
 //initialize socket
-const socketManager = require("./server-socket");
-const nft = require('./nft');
-const scoring = require('./database/scoring.js');
+const socketManager = require("../sockets/server-socket");
+const nft = require('./nfts/nft.js');
+const scoring = require('./scoring.js');
 
 router.post("/login", auth.login);
 router.post("/logout", auth.logout);

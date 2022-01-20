@@ -14,7 +14,7 @@
 */
 
 //TA-created to make sure project is in order
-const validator = require("./validator");
+const validator = require("./util/validator");
 validator.checkSetup();
 
 //Installed Libraries
@@ -23,8 +23,8 @@ const session = require("express-session"); // library that stores info about ea
 const path = require("path");
 
 //user defined libraries
-const api = require("./api");
-const auth = require("./auth");;
+const api = require("./apis/api");
+const auth = require("./apis/auth");;
 
 
 // create a new express server
