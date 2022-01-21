@@ -1,0 +1,11 @@
+.LongTime {
+    color: var(--light-grey)
+}
+
+.ShortTime {
+    color: var(--yellow-highlight); 
+}
+
+.EndTime {
+    color: var(--yellow-highlight); 
+} 

@@ -1,9 +1,16 @@
 
 /*TEXT Infomatic styling*/
 .Infomatic {
+    width: 100%;
+    height: 25%;
+    overflow: hidden;
     color: var(--light-grey);
     font-size: 16pt;
 }
+.Infomatic * {
+    margin: 12px 0px;
+}
+
 .InfomaticHeader {
     font-weight: bold;
 }
@@ -12,18 +19,29 @@
     font-size: 24pt;
 }
 /*Image containers: Individual and both*/
+.NftImage{
+    width: 100%;
+    height: 75%;
+}
+.Images {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: turquoise;
+    align-items: stretch;
+}
 
 .AnnotatedNFT{
-    width: 50%;
-    height: 100%;
-
+    height: calc(100% - 80px);
+    width: calc(50% - 80px);
     padding: 20px;
     margin: 20px;
 
     display: flex;
     flex-direction: column;
+    background-color:tomato;
+}
+.AnnotatedNFT > * {
+    flex-grow: 1;
 }
 
-.Images {
-    display: flex;
-}

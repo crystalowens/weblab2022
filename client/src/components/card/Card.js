@@ -3,7 +3,7 @@ import "./Card.css";
 
 const Card = (props) => {
     return (
-        <div className={`Card YellowBorder ${props.reactClassName || ""}`}>
+        <div className={`Card GreyFill ${props.cname || ""}`}>
             {props.children}
         </div>
     );

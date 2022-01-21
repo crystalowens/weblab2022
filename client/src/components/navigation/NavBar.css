@@ -28,7 +28,7 @@ a:visited {
 }
 a:hover { 
     text-decoration: none; 
-    color: var(--light-grey); 
+    color: var(--blue-highlight); 
 }
 a:active { 
     text-decoration: none; 
@@ -47,5 +47,5 @@ a:active {
 
 .Highlight-bar {
     width: 100vw;
-    height: var(--s);
+    height: var(--xs);
 }

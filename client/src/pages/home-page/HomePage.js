@@ -26,17 +26,17 @@ const HomePage = () => {
                 </div>
                 
                 <div className="TitleZone Transparent-Background" >
-                    <a href="\game\"> NFT Or Art </a>
-                    <button className="StartButton Transparent-Background">
-                        <a href="\game\">Start</a>
+                    <a href="\game\">The Be$t Nft</a>
+                    <button className="StartButton Transparent-Background BlinkBorder">
+                        <a href="\game\">Play Game</a>
                     </button>
                 </div>
-                {/* <div className="OtherLinks Transparent-Background"> */}
-                    {/* <a href="/">Login</a> */}
-                     {/* |&nbsp; */}
-                    {/* <a href="/">Leaderboard</a> |&nbsp; */}
-                    {/* <a href="/">About</a> */}
-                {/* </div> */}
+                {/* <div className="OtherLinks Transparent-Background"> 
+                    <a href="/"> Login </a>
+                     |&nbsp;
+                    <a href="/"> Leaderboard </a> |&nbsp;
+                    <a href="/"> About </a>
+                 </div> */}
 
             </div>
         </div>

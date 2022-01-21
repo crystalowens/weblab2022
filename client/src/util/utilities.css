@@ -18,12 +18,14 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 :root {
-  --primary: #555555;
+  --primary: #383838;
   --secondary: #a8a8a8;
   --light-grey: #e0e0e0;
-  --blue-highlight: #25d2d8;
+  --dark-grey: #222222;
+  --blue-highlight: #084799;
   --yellow-highlight: #ffd620;
-  --backgroundColor: rgb(36, 36, 36); 
+  --backgroundColor: rgb(17, 17, 17); 
+  --red-alert: #ff2020;
 
   --xs: 4px;
   --s: 8px;
@@ -34,6 +36,13 @@
 .YellowFill{
   background-color: var(--yellow-highlight);
 }
+.BlueFill{
+  background-color: var(--blue-highlight);
+}
+
+.GreyFill{
+  background-color: var(--dark-grey);
+}
 .YellowBorder{
   border-radius: var(--l);
   border: var(--s);
@@ -41,11 +50,15 @@
   border-color: var(--yellow-highlight);
 }
 
+
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
+  height: 100%;
+  width: 100%;
 }
 
 form {

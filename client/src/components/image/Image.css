@@ -1,0 +1,12 @@
+
+
+.Image {
+
+    border-radius: 20px;
+    overflow: hidden;
+
+    /*flex-grow: 1;
+    align-self: stretch; */
+    width: 00px;
+    height: 00px;
+}

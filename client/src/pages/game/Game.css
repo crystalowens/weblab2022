@@ -1,7 +1,6 @@
 
 .Game {
-    height: 100%;
-    width: 100%;
+    flex-grow: 1;
     background-color: var(--backgroundColor);
 
     display: flex;
@@ -9,26 +8,40 @@
     align-items: center;
     justify-content: space-evenly;
 }
-.GameInfo {
-    display: flex;
-    width: calc(100% - 40px);
-    margin: 20px;
-}
+
 
 .GameStage {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
+    width: 75%;
+    height: 75%;
+    background-color: violet;
+}
+
+.GameInfo {
+    display: flex;
     align-items: center;
-    width: 75vw;
+    justify-content: space-evenly;
+    width: calc(100% - 40px);
+    height: min-content;
+    margin: 20px;
+    background-color:cadetblue;
+}
+
+.GameInfo > Card {
+    flex-grow:1;
+}
+
+
+.HowToPlay{
+    font-size: 24px;
+    width: 15%;
+    height: min-content;
+    background-color:yellowgreen;
 }
 
 /*Cards*/
-
 .Timer{
     flex-grow: 1;
-}
-.HowToPlay{
-    font-size: 24px;
-    width: 15vw;
-    height: min-content;
 }

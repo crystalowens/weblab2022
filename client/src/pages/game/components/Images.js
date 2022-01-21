@@ -1,9 +1,11 @@
 import React from "react";
 import {useState, useEffect} from "react";
-import ClickableImage from "../../../components/clickable-image/ClickableImage";
+import Image from "../../../components/image/Image";
+import Clickable from "../../../components/clickable/Clickable";
 
 import {getUser} from "../../../services/userSession.js";
 import {getRandomNFT} from "../../../services/nft.js";
+
 
 import "./Images.css";
 
@@ -42,14 +44,11 @@ const NFTInfomatic = ({name, description, date}) => {
 }
 
 const AnnotatedNFT = ({nft, onClick}) => {
-    if(!nft) {
-        onClick = () => {};
-        nft = loadingNFT();
-    }
-    const size = { width: 500, height: 500 };
+    if(!nft) { nft = loadingNFT(); onClick = () => {};}
+    const size = { width: 0, height: 0 };
     return (
         <div className="AnnotatedNFT">
-            <ClickableImage link = {nft.image} onClick={onClick} size={size}/>
+            <div className="NftImage"><Clickable onClick = {onClick}><Image link = {nft.image}/></Clickable></div>
             <NFTInfomatic name={nft.name} description={nft.description} date={formatDate(nft.sold)}/>
         </div>
     );

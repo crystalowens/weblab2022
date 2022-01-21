@@ -1,17 +1,18 @@
 
 .HomePage{
     position: relative;
+    background-color: var(--primary);
 }
 
 .Transparent-Background{
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.9);
     color:white;
     font: bold;
-    border-radius: 20px;
+    border-radius: 30px;
 }
 
 .TitleZone{
-    padding: 0px 20px;
+    padding: 10px 30px;
 
     font-size: 112px;
 
@@ -19,18 +20,41 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* bottom: 733px; */
+    bottom:53%;
 }
 
 .StartButton{
-    padding: 0px 20px;
-
+    padding: 30px 30px;
     font-size: 64px;
 
     position: absolute;
     justify-content: center;
     align-items: center;  
-    bottom: -100px;
-    border: none;
+    bottom: -205%;
+    /* border: none; */
+    /* border-radius: 50px; */
+    border-style:solid; 
+    border-color:black; 
+    border-width:var(--xs); 
+}
+
+.BlinkText {
+    animation: blinker-text 2s linear infinite;
+}
+@keyframes blinker-text {
+  50% {
+      opacity: 0.3;
+    }
+}
+
+.BlinkBorder {
+    animation: blinker-border 2s linear infinite;
+}
+@keyframes blinker-border {
+    50% {
+        border-color: #a3a3a3;
+    }
 }
 
 .OtherLinks{
@@ -72,4 +96,8 @@
 .HomePage-Row img {
     flex-grow: 1;
     height: 100%;
+
+    border:solid; 
+    border-width: var(--s); 
+    border-color: var(--backgroundColor); 
 }

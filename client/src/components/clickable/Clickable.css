@@ -1,0 +1,10 @@
+
+.Clickable {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.Clickable:hover{
+    outline: 10px solid var(--yellow-highlight);
+}

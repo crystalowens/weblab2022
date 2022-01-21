@@ -1,0 +1,17 @@
+.Link404:link { 
+    text-decoration: underline; 
+    color: blue; 
+
+}
+.Link404:visited { 
+    text-decoration: underline; 
+    color: blue; 
+}
+.Link404:hover { 
+    text-decoration: underline; 
+    color: blue; 
+}
+.Link404:active { 
+    text-decoration: underline; 
+    color: blue; 
+}

@@ -14,15 +14,15 @@ const About = () => {
         <NavBar/>
         <div className="u-flex">
             <div className="About-subContainer u-textCenter">
-            <h4 className="About-title">About Me</h4>
-            <div id="About-text">
-                <div>
-                This is why we made the site: 
-                </div>
-                <div className="About-hovercontrol">~~..~~</div>
-
-            </div>
-            
+              <h4 className="About-title">Imagine</h4>
+              <div id="About-text">
+                  <div>
+                    <p>… a world defined by different currencies</p>
+                    <p>… a fully digital art environment</p>
+                    <p>… no “true” ownership of intangible goods</p> 
+                  </div>
+              </div>
+              <h4 className="About-title">Would you survive?</h4>
             </div>
         </div>
       </div>

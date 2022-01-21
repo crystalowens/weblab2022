@@ -25,7 +25,7 @@ async function transfers(tokenAddress, tokenId) {
             credentials : 'include',
             headers : {
                 'Content-Type' : 'application/json',
-                'x-api-key' : "qb8XkSdAPhYnbPhcZZ6hOjxVp1rG84AhK8oeWJsnrsH4fMJPg0F8RSWV0tHrrGTc"
+                'x-api-key' : `${apiId}`
             }
         });
         return res.json();

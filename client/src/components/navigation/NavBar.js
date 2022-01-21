@@ -16,7 +16,7 @@ const NavLinks = () => {
           <StyledLink to = "/game/">Play Game</StyledLink> <Divider/>
           {/* <StyledLink to = "/about">About</StyledLink> <Divider/> */}
           {/* <StyledLink to = "/">Leaderboard</StyledLink> <Divider/> */}
-          {userId && /*in the future add profiles to everyone/${userId}*/(
+          {userId && (
               <> 
                 <StyledLink to={`/profile`} className="NavBar-link">
                 Profile
@@ -32,13 +32,13 @@ const NavLinks = () => {
 
 const NavBar = () => {
     return (
-        <>
+        <div>
             <div className="NavBar-container">
-                <h1 className="Title"><a href="/">Art vs NFT</a></h1>
+                <h1 className="Title"><a href="/">The Be$t Nft</a></h1>
                 <NavLinks path = "/"/>
             </div>
-            <div className="Highlight-bar YellowFill"></div>
-        </>
+            <div className="Highlight-bar BlueFill"></div>
+        </div>
     );
 }
 

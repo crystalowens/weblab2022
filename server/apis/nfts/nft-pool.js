@@ -32,13 +32,13 @@ async function randomMoralisNft(){
     const nft = randomElement(nftPool);
     console.log(`Picked random nft: ${nft.tokenAddress}, id: ${nft.tokenId}, uri: ${nft.tokenUri.substring(0, 100)}...`);
     return nft;
-
 }
 
+//'World of Women' started posted a bunch of same pieces. have to take it out.
 async function startCollecting(){
     const allQueries = ['Bored Ape Yacht Club', 'Doodles', 
         'Mutant Ape Yacht Club', 'PhantaBear', 'CryptoSkulls', 'CryptoPunks',
-        'Cool Cats', 'The Space Bulls TSB', 'Decentraland', 'World of Women'];
+        'Cool Cats', 'The Space Bulls TSB', 'Decentraland'];
     for (const query of allQueries) {
         const nfts = await retrieveAllNfts(query);
         let totalPushed = 0;
