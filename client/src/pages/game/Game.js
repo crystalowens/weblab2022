@@ -56,7 +56,7 @@ const GameInfo = ({timeLeft, score, isStart, onStart, onRestart}) => {
         <div className = "GameInfo">
             <Timer timeLeft={timeLeft}/>
             <StartState isStart = {isStart} onStart={onStart} onRestart={onRestart}/>
-            <Score score={score}/>
+            <Score cname = "Score" score={score}/>
         </div>
     );
 }

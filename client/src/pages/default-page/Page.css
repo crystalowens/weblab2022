@@ -6,11 +6,16 @@
     height: 100vh;
 
     align-items: stretch;
+    overflow-x: hidden;
 }
-
+.NavBar{
+    height: 10%;
+    background-color: var(--backgroundColor);
+    overflow: visible;
+}
 .PageBody {
-    flex-grow: 1;
-    
+    min-height: 800px;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: stretch;

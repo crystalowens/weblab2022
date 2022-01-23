@@ -1,9 +1,9 @@
 import React from "react";
 import Button from "../../../../components/buttons/Button.js"
 
-const Start = ({onClick}) => {
+const Start = (props) => {
     return (
-        <Button onClick={onClick}>Start</Button>
+        <Button cname = {props.cname} onClick={props.onClick}>Start</Button>
     );
 }
 

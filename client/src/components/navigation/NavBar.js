@@ -32,13 +32,13 @@ const NavLinks = () => {
 
 const NavBar = () => {
     return (
-        <div>
+        <>
             <div className="NavBar-container">
                 <h1 className="Title"><a href="/">The Be$t Nft</a></h1>
                 <NavLinks path = "/"/>
             </div>
             <div className="Highlight-bar BlueFill"></div>
-        </div>
+        </>
     );
 }
 

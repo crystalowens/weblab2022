@@ -15,7 +15,7 @@ async function fillPool(nftPool){
             //thisll go over 20, cause intervals will keep getting called 
             //even after nft is made. this doenst matter tho...
             const nft = await getRandomNFT();
-            //preCacheImg(nft.image);
+            preCacheImg(nft.image);
             console.log(nftPool.length);
             nftPool.push(nft);
         }

@@ -2,6 +2,7 @@
 
 .NavBar-container{
     background-color: var(--primary);
+    height: 36px;
     padding: 16px;
     display: flex;
     flex-direction: row;
@@ -46,6 +47,7 @@ a:active {
 }
 
 .Highlight-bar {
+    height: var(--m);
     width: 100vw;
-    height: var(--xs);
+    position: relative;
 }

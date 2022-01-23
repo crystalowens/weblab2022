@@ -62,7 +62,17 @@ function formatMetadata(metadata, token_uri){
     };
 }
 
+
+//they take too long to load
+const bannedImageLinks = ["ipfs"];
+
 function isValidMetadata(metadata){
+    if(metadata.image){
+        for(const imageLink of bannedImageLinks){
+            if(metadata.image.includes(imageLink))
+                return false;
+        }
+    }
     return !!metadata && !!metadata.name && !!metadata.image && !!metadata.description;
 }
 
