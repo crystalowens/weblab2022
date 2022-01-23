@@ -13,13 +13,15 @@ const Profile = () => {
   const [user, setUser] = useState({
     highscore : 0,
     username: "default username", 
-    picture: "https://images.dog.ceo/breeds/maltese/n02085936_1515.jpg"
+    picture: "https://imgix.ranker.com/user_node_img/50012/1000224926/original/charcoal-photo-u1"
   });
   const [loading, setLoading] = useState(true);
   useEffect(() => {
+      console.log('loading profile');
        getUser().then((user)=> {
         console.log(user);
         setUser(user);
+        setLoading(false);
        });
   }, []);
 
@@ -34,7 +36,7 @@ const Profile = () => {
                 All-time high score: {user.highscore}
             </div>
             <div className="Profile-avatar">
-                <img src={user.picture}/>
+                {loading ? (<></>): (<img src={user.picture}/>)}
                 <h1 className="Profile-name u-textCenter">{user.username}</h1>
             </div>
             </div>

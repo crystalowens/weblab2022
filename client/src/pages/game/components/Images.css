@@ -25,7 +25,7 @@
     height: 75%;
 }
 .AnnotatedNFT{
-    height: calc(100% - 80px);
+    height: calc(100% - 40px);
     width: calc(50% - 20px);
     margin: 20px;
 
