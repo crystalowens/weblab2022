@@ -13,6 +13,7 @@ import Score from "./components/cards/Score.js";
 
 import "./Game.css";
 import { UserIdContext } from "../../contexts/UserIdContext.js";
+import StartTransition from "./StartTransition.js";
 
 const Game = () => {
     const {userId} = useContext(UserIdContext);
@@ -43,19 +44,19 @@ const Game = () => {
 const GameStage = (props) => {
     return (
         <div className="GameStage">
-            <GameInfo timeLeft={props.timeLeft} score={props.score} 
-                isStart = {props.isStart} onStart={props.onStart} onRestart={props.onRestart}/>
+            {!props.isInGame && (<StartTransition onClick={props.onStart}/>)}
+            <GameInfo timeLeft={props.timeLeft} score={props.score} onRestart={props.onRestart}/>
             <Images leftNft={props.leftNft} rightNft={props.rightNft} 
                 onCorrect={props.onCorrect} onFailure={props.onFailure}/>
         </div>
     );
 }
 
-const GameInfo = ({timeLeft, score, isStart, onStart, onRestart}) => {
+const GameInfo = ({timeLeft, score, onRestart}) => {
     return (
         <div className = "GameInfo">
             <Timer timeLeft={timeLeft}/>
-            <StartState isStart = {isStart} onStart={onStart} onRestart={onRestart}/>
+            <Restart onRestart={onRestart}/>
             <Score cname = "Score" score={score}/>
         </div>
     );

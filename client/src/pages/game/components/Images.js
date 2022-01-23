@@ -38,7 +38,6 @@ const NFTInfomatic = ({name, description, date}) => {
         <div className="Infomatic">
             <p className="InfomaticTitle"><span className="InfomaticHeader">Title: </span>{clipText(name, 50)}</p>
             <p><span className="InfomaticHeader">Sold On: </span>{clipText(date, 50)}</p>
-            <p className="InfomaticDescription">{clipText(description, 200)}</p>
         </div>
     );
 }

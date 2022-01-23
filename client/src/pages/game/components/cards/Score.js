@@ -5,7 +5,7 @@ import useWindowSize from "../../useWindowSize.js";
 const Score = (props) => {
     const [width, height] = useWindowSize();
     return (
-        <Card cname = {props.cname}>{width > 1120 ? "Score: " : "" }{props.score}</Card>
+        <Card cname = {props.cname}>{width > 1151 ? "Score: " : "" }{props.score}</Card>
     );
 }
 

@@ -47,7 +47,7 @@ a:active {
 }
 
 .Highlight-bar {
-    height: var(--m);
+    height: var(--s);
     width: 100vw;
     position: relative;
 }

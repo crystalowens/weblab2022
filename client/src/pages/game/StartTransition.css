@@ -1,0 +1,44 @@
+
+.StartBlock {    
+    background: rgb(17,17,17, 0.8);
+    background: linear-gradient(0deg, rgba(17,17,17,1) 0%, rgba(38,38,38,0) 50%, rgba(17,17,17,1) 100%);
+
+    width: calc(100% + 0px);
+    height: 100%;
+    position: absolute;
+    top:0px;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+}
+.CircleBorder{
+    background: rgba(17,17,17, 0.4);
+    background: radial-gradient(ellipse, rgba(38,38,38,0.9) 0%, rgba(17,17,17,1) 99%);
+    background-clip: border-box;
+}
+
+.InnerHelper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0px;
+    left: 0;
+
+    background: rgb(17,17,17, 0.5);
+    background: linear-gradient(90deg, rgba(17,17,17,1) 0%, rgba(38,38,38,0.9) 50%, rgba(17,17,17,1) 100%);
+    background: linear-gradient(0deg, rgba(17,17,17,1) 0%, rgba(38,38,38,0) 50%, rgba(17,17,17,1) 100%);
+}
+
+.Text{
+    color: var(--light-grey);
+    font-weight: bold;
+    font-size: 48pt;
+}
+
+.Text:hover {
+    font-size: 50pt;
+    cursor: pointer;
+}

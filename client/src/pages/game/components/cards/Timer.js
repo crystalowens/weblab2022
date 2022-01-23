@@ -8,7 +8,7 @@ const Timer = (props) => {
   const [width, height] = useWindowSize();
   const cname = `Timer ${props.timeLeft > 6 ? "LongTime": (props.timeLeft > 3 ? "ShortTime" : "EndTime" )}`;
   return (
-    <Card cname = {cname}>{width > 0 ? "Time remaining: " : "" }{props.timeLeft}</Card>
+    <Card cname = {cname}>{width > 1153 ? "Time remaining: " : "Time: " }{props.timeLeft}</Card>
   );
 };
 
