@@ -37,10 +37,16 @@ async function transfers(tokenAddress, tokenId) {
 }
 
 async function metadata(nft) {
-    if(nft.metadata){
-        return Promise.resolve(JSON.parse(nft.metadata));
+    try {
+        if(nft.metadata){
+            return Promise.resolve(JSON.parse(nft.metadata));
+        }
+        else{
+            return null;
+        }
     }
-    else{
+    catch(err){
+        console.log(`Error while fetching metadata for token address: ${tokenAddress} and id: ${tokenId}`);
         return null;
     }
 }

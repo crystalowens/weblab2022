@@ -56,17 +56,11 @@ const GameInfo = ({timeLeft, score, onRestart}) => {
     return (
         <div className = "GameInfo">
             <Timer timeLeft={timeLeft}/>
-            <Restart onRestart={onRestart}/>
+            <Restart cname = "RestartButton" onRestart={onRestart}/>
             <Score cname = "Score" score={score}/>
         </div>
     );
 }
 
-const StartState = ({isStart, onStart, onRestart}) => {
-    return (isStart ? 
-        (<Start onClick = {onStart}/>) : 
-        ((<Restart onClick = {onRestart}/>)
-    ));
-}
 
 export default Game;
