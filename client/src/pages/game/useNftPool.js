@@ -14,10 +14,15 @@ async function fillPool(nftPool){
         if(nftPool.length <= 20){
             //thisll go over 20, cause intervals will keep getting called 
             //even after nft is made. this doenst matter tho...
-            const nft = await getRandomNFT();
+            try {
+                const nft = await getRandomNFT();
                 if(nftPool.length <= 20){
-                preCacheImg(nft.image);
-                nftPool.push(nft);
+                    preCacheImg(nft.image);
+                    nftPool.push(nft);
+                }
+            }
+            catch(err){
+                console.log('Waiting for backend to become available to send nfts.');
             }
         }
     }, 300);

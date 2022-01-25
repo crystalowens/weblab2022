@@ -1,6 +1,7 @@
 const User = require('../models/user.js');
 const Game = require('../models/game.js');
 const mongoose = require('mongoose');
+const debug = require('../util/debug.js');
 
 function getUser(userId) {
     console.log(`Retrieving User: ${userId}`);
@@ -13,11 +14,18 @@ function getGame(userId) {
 }
 
 function addToScore(number, userId){
+
     return getGame(userId).then((mongoGame)=>{
-        console.log(`Adding ${number} to Mongo Game:${mongoGame}`);
-        mongoGame.score += number;
-        return mongoGame.save();
-    });
+        try{
+            debug.logObject(mongoGame);
+            console.log(`Adding ${number} to Mongo Game:${mongoGame}`);
+            mongoGame.score += number;
+            return mongoGame.save();
+        }
+        catch (err) {
+            console.log("User logged out during game");
+        }
+    }).catch((err)=>{});
 }
 
 function startGame(userId) {
@@ -31,12 +39,17 @@ function startGame(userId) {
 function endGame(userId) {
     return getUser(userId).then((mongoUser)=>{
         getGame(userId).then((mongoGame)=>{
-            if(mongoGame.score > mongoUser.highscore){
-                mongoUser.highscore = mongoGame.score;
-                return Promise.all([mongoUser.save(), Game.deleteMany({userId : userId})]);
+            try {
+                if(mongoGame.score > mongoUser.highscore){
+                    mongoUser.highscore = mongoGame.score;
+                    return Promise.all([mongoUser.save(), Game.deleteMany({userId : userId})]);
+                }
+            }
+            catch (err) {
+                console.log("User logged in during game");
             }
         });
-    });
+    }).catch((err)=>{});
 }
 
 module.exports = {

@@ -22,7 +22,13 @@ const Game = () => {
 
     const setPauseState = (shouldPause) => { setTimerActivated(!shouldPause); }
     const onStart = () => { gameStateDispatch({type:"start"}); }
-    const onRestart = () => { gameStateDispatch({type:"end"}).then(() => gameStateDispatch({type:"start"})) }
+    const onRestart = () => { 
+        if(isInGame) { 
+            gameStateDispatch({type:"end"}).then(() => gameStateDispatch({type:"start"})) 
+        } else{
+            gameStateDispatch({type:"start"});
+        }
+    }
 
     const onCorrect = () => { if(isInGame) { gameStateDispatch({type:"nextRound"}); }}
     const onFailure = () => { if(isInGame) { gameStateDispatch({type:"end"}); }}
