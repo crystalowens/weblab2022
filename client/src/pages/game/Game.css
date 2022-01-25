@@ -54,3 +54,7 @@
 .RestartButton {
     height: 51.2px;
 }
+
+.GameEnded {
+    background-color: green;
+}

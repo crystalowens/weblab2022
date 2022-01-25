@@ -37,7 +37,7 @@ const NavBar = () => {
                 <h1 className="Title"><a href="/">NFT Apprai$al Trainer</a></h1>
                 <NavLinks path = "/"/>
             </div>
-            <div className="Highlight-bar BlueFill"></div>
+            <div className="Highlight-bar BarFill"></div>
         </>
     );
 }

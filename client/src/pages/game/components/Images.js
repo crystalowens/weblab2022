@@ -86,16 +86,14 @@ const NextRoundTimer = ({timeLeft}) => {
     console.log(timeLeft);
     return (
         <div className="CenterAlert NextRoundTimer">
-            <div>Correct!</div> 
-            <div>{timeLeft}</div>
+            <div>Correct! Next round in {timeLeft}</div>
         </div>
     );
 }
 const FailedRound = () => {
     return (
         <div className="CenterAlert FailedRound">
-            <div>Wrong!</div> 
-            Failed The Round!
+            Wrong! Failed The Round!
         </div>
     );
 }

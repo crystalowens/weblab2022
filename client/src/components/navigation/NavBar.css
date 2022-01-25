@@ -9,6 +9,9 @@
     align-items: center;
     justify-content:space-between;
     position: relative;
+
+    background: linear-gradient(90deg, rgb(63, 63, 63) 0%, rgba(31, 31, 31, 0.9) 50%, rgb(63, 63, 63) 100%);
+
 }
 
 .Title{
@@ -47,7 +50,7 @@ a:active {
 }
 
 .Highlight-bar {
-    height: var(--s);
+    height: 1px;
     width: 100vw;
     position: relative;
 }

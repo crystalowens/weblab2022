@@ -36,8 +36,11 @@
 .YellowFill{
   background-color: var(--yellow-highlight);
 }
-.BlueFill{
-  background-color: var(--blue-highlight);
+.BarFill{
+  background-color: var(--light-grey);
+  background: linear-gradient(90deg, rgb(2, 2, 2) 0%, rgba(153, 153, 153, 0.9) 50%, rgb(19, 19, 19) 100%);
+
+
 }
 
 .GreyFill{
