@@ -26,7 +26,7 @@ const HomePage = () => {
                 </div>
                 
                 <div className="TitleZone Transparent-Background" >
-                    <a href="\game\">The Be$t Nft</a>
+                    <a href="\game\">NFT Apprai$al Trainer</a>
                     <button className="StartButton Transparent-Background BlinkBorder">
                         <a href="\game\">Play Game</a>
                     </button>
