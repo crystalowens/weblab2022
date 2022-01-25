@@ -18,8 +18,9 @@ import StartTransition from "./StartTransition.js";
 const Game = () => {
     const {userId} = useContext(UserIdContext);
     const [leftNft, rightNft, newNfts] = useNfts();
-    const [timeLeft, round, isInGame, gameStateDispatch] = useGameState({onNewRound : newNfts, isLoggedIn : () => !!userId});
+    const [timeLeft, round, isInGame, setTimerActivated, gameStateDispatch] = useGameState({onNewRound : newNfts, isLoggedIn : () => !!userId});
 
+    const setPauseState = (shouldPause) => { setTimerActivated(!shouldPause); }
     const onStart = () => { gameStateDispatch({type:"start"}); }
     const onRestart = () => { gameStateDispatch({type:"end"}).then(() => gameStateDispatch({type:"start"})) }
 
@@ -33,8 +34,8 @@ const Game = () => {
             <div className="Game">
                 <GameStage timeLeft ={timeLeft} score = {round} 
                     leftNft = {leftNft} rightNft = {rightNft}
-                    onCorrect = {onCorrect} onFailure={onFailure}
-                    isStart = {!isInGame} onStart={onStart} onRestart={onRestart}/>
+                    onCorrect = {onCorrect} onFailure={onFailure} setPauseState = {setPauseState}
+                    isInGame = {isInGame} onStart={onStart} onRestart={onRestart}/>
                 <HowToPlay cname="HowToPlay"/>
             </div>
         </Page>
@@ -44,10 +45,10 @@ const Game = () => {
 const GameStage = (props) => {
     return (
         <div className="GameStage">
-            {!props.isInGame && (<StartTransition onClick={props.onStart}/>)}
+            <StartTransition onClick={props.onStart}/>
             <GameInfo timeLeft={props.timeLeft} score={props.score} onRestart={props.onRestart}/>
-            <Images leftNft={props.leftNft} rightNft={props.rightNft} 
-                onCorrect={props.onCorrect} onFailure={props.onFailure}/>
+            <Images leftNft={props.leftNft} rightNft={props.rightNft} isInGame = {props.isInGame} timeIsZero = {props.timeLeft == 0}
+                onCorrect={props.onCorrect} onFailure={props.onFailure} setPauseState = {props.setPauseState}/>
         </div>
     );
 }

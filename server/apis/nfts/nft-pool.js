@@ -1,5 +1,6 @@
 
 const moralis = require('./moralis-api.js');
+const util = require('util');
 const random = require('../../util/random.js');
 const { randomElement } = require('../../util/random.js');
 const { isFormattableMetadata, formatMetadata, isValidMetadata } = require('./valid-metadata.js');

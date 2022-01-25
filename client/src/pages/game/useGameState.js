@@ -6,7 +6,7 @@ import { addToScore, finishGame, createGame } from "../../services/gameSession.j
 function useGameState({onNewRound, isLoggedIn}){
     const [round, setRound] = useState(0);
     const [isInGame, setIsInGame] = useState(false);
-    const [timeLeft, resetTimer, setTimerActivated] = useTimer({onZero : end});
+    const [timeLeft, resetTimer, setTimerActivated] = useTimer({onZero : () => { end(); }, time : 10});
 
     const initializeRound = () => {
         setTimerActivated(false);
@@ -56,7 +56,7 @@ function useGameState({onNewRound, isLoggedIn}){
         }
     }
 
-    return [timeLeft, round, isInGame, dispatch];
+    return [timeLeft, round, isInGame, setTimerActivated, dispatch];
 }
 
 export default useGameState;

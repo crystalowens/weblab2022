@@ -17,7 +17,6 @@ async function fillPool(nftPool){
             const nft = await getRandomNFT();
                 if(nftPool.length <= 20){
                 preCacheImg(nft.image);
-                console.log(nftPool.length);
                 nftPool.push(nft);
             }
         }
