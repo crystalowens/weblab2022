@@ -6,7 +6,7 @@
     overflow: hidden;
     font-size: 48pt;
     border-radius: 10px;
-    color: var(--red-alert);
+    color: var(--light-grey);
     transform: translateY(calc(50% - 50px));
     display: flex;
     justify-content: center;

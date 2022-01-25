@@ -1,13 +1,13 @@
 
 .NoTimeHelper{
-    animation: rotate 3.5s cubic-bezier(0.6,-0.58, 0.43, 1.47) infinite forwards;
+    animation: rotate 3.5s cubic-bezier(0.6,-0.58, 0.43, 1.47) infinite reverse forwards;
     background-color: var(--dark-grey);
     width: 100%;
     overflow: hidden;
     font-size: 48pt;
     border-radius: 10px;
     padding: 4px;
-    color: red;
+    color: var(--light-grey);
     transform: translateY(calc(50% - 50px));
     display: flex;
     justify-content: center;
@@ -28,11 +28,9 @@
 @keyframes rotate {
     0% {
         transform: rotate(45deg);
-        max-height: 0px;
     }
     25%{
         transform: rotate(22deg);
-        max-height: 120px;
     }
     
     50%{
@@ -41,8 +39,10 @@
 
     75% {
         transform: rotate(-22deg);
+        max-height: 120px;
     }
     100% {
         transform: rotate(-45deg);
+        max-height: 0px;
     }
 }

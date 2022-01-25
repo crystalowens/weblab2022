@@ -64,7 +64,7 @@ const GameInfo = ({timeLeft, score, onRestart, isInGame}) => {
         <div className = "GameInfo">
             <Timer timeLeft={timeLeft}/>
             <Restart cname={!isInGame ? "RestartButton Highlight": "RestartButton"} onRestart={onRestart}/> 
-            <Score cname = "Score" score={score}/>
+            <Score cname = "Score" score={score} isInGame = {isInGame}/>
         </div>
     );
 }

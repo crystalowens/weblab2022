@@ -11,12 +11,12 @@
     position: relative;
 
     background: linear-gradient(90deg, rgb(63, 63, 63) 0%, rgba(31, 31, 31, 0.9) 50%, rgb(63, 63, 63) 100%);
-
+    z-index: 3;
 }
 
 .Title{
     /* We should make it a fancier font */
-    font-size: 32px;
+    font-size: 28px;
     margin: 0px;
     margin-right: 20px;
     color: var(--light-grey);
@@ -41,7 +41,7 @@ a:active {
 
 .Links{
     color:var(--light-grey);
-    font-size: 32px;
+    font-size: 28px;
 }
 
 .LinkText{
@@ -53,4 +53,5 @@ a:active {
     height: 5px;
     width: 100vw;
     position: relative;
+    z-index: 2;
 }

@@ -39,6 +39,7 @@
     height: min-content;
     width: 15%;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 /*Cards*/
@@ -49,6 +50,7 @@
 
 .Score{
     margin-right: 0px;
+    
 }
 
 .RestartButton {
@@ -56,16 +58,15 @@
 }
 
 .Highlight{
-    animation: flash 0.5s linear infinite alternate-reverse;
-    border-radius: 10px;
+    animation: flash 0.8s cubic-bezier(0.4, 0, 1, 1) infinite alternate-reverse;
 }
 
 @keyframes flash{
     0%{
-        box-shadow: 0px 0px 25px var(--yellow-highlight);
+        box-shadow: 0px 0px 1px 2px var(--light-grey);
     }
     100%{
-        box-shadow: 0px 0px 0px var(--yellow-highlight);
+        box-shadow: 0px 0px 1px 6px var(--light-grey);
     }
 }
 

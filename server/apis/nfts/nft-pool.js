@@ -44,7 +44,7 @@ async function randomMoralisNft(){
 async function startCollecting(){
     const allQueries = ['Bored Ape Yacht Club', 'Doodles', 
         'Mutant Ape Yacht Club', 'PhantaBear', 'CryptoSkulls', 'CryptoPunks',
-        'Cool Cats', 'The Space Bulls TSB', 'Decentraland'];
+        'Cool Cats', 'The Space Bulls TSB', 'Decentraland', 'Azuki', 'uwucrew', 'Zxdiac'];
     for (const query of allQueries) {
         const nfts = await retrieveAllNfts(query);
         let totalPushed = 0;

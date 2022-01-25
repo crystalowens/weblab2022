@@ -13,7 +13,7 @@ const NavLinks = () => {
   const {userId} = useContext(UserIdContext);
   return (
       <div className="Links">
-          <StyledLink to = "/game/">Play Game</StyledLink> <Divider/>
+          <StyledLink to = "/">Play Game</StyledLink> <Divider/>
           <StyledLink to = "/about">About</StyledLink> <Divider/>
           {/* <StyledLink to = "/">Leaderboard</StyledLink> <Divider/> */}
           {userId && (
@@ -34,7 +34,7 @@ const NavBar = () => {
     return (
         <>
             <div className="NavBar-container">
-                <h1 className="Title"><a href="/">NFT Apprai$al Trainer</a></h1>
+                <h1 className="Title"><a href="/">NFT Showdown</a></h1>
                 <NavLinks path = "/"/>
             </div>
             <div className="Highlight-bar BarFill"></div>

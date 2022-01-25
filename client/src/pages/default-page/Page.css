@@ -9,13 +9,13 @@
     overflow-x: hidden;
 }
 .NavBar{
-    height: 10%;
+    height: 5%;
     background-color: var(--backgroundColor);
     overflow: visible;
 }
 .PageBody {
     min-height: 800px;
-    height: 90%;
+    height: 95%;
     display: flex;
     flex-direction: column;
     align-items: stretch;

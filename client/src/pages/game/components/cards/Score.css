@@ -1,0 +1,19 @@
+
+.ScoreNumber {
+    position: absolute;
+    animation: pop-out 0.2s linear 1 alternate-reverse;
+}
+
+.InvisibleNumber{
+    visibility: hidden;
+}
+
+@keyframes pop-out {
+    0%{
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+        font-size: 140%;
+    }
+}

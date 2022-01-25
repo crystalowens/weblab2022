@@ -36,7 +36,7 @@ const formatDate = (date) => {
 const NFTInfomatic = ({name, description, date}) => {
     return (
         <div className="Infomatic">
-            <p className="InfomaticTitle"><span className="InfomaticHeader">Title: </span>{clipText(name, 50)}</p>
+            <p className="InfomaticTitle"><span className="InfomaticHeader">Title: </span>{clipText(name, 75)}</p>
             <p><span className="InfomaticHeader">Sold On: </span>{clipText(date, 50)}</p>
         </div>
     );
@@ -53,7 +53,7 @@ const AdditionalInfo = ({price, description})=>{
     return (
         <>
             <p className="Price">{priceText}</p>
-            <p className="Description">Description : {description}</p>
+            <p className="Description">Description : {clipText(description, 450)}</p>
         </>
     );
 }
