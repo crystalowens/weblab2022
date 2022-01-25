@@ -45,7 +45,7 @@ const AdditionalInfo = ({price, description})=>{
         priceText = "Never Sold Before";
     }
     else{
-        priceText = `Price ${price} eth.`;
+        priceText = `The sales price was ${price} etherium.`;
     }
     return (
         <>
@@ -86,13 +86,15 @@ const NextRoundTimer = ({timeLeft}) => {
     console.log(timeLeft);
     return (
         <div className="CenterAlert NextRoundTimer">
-            {timeLeft}
+            <div>Correct!</div> 
+            <div>{timeLeft}</div>
         </div>
     );
 }
 const FailedRound = () => {
     return (
         <div className="CenterAlert FailedRound">
+            <div>Wrong!</div> 
             Failed The Round!
         </div>
     );
