@@ -1,0 +1,25 @@
+
+.FailedRoundHelper{
+    animation: expand-down 0.3s linear 1 backwards;
+    background-color: var(--dark-grey);
+    width: 100%;
+    overflow: hidden;
+    font-size: 48pt;
+    border-radius: 10px;
+    color: red;
+    transform: translateY(calc(50% - 50px));
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+@keyframes expand-down {
+    0% {
+        max-height: 0px;
+    }
+
+    100% {
+        max-height: 120px;
+    }
+}

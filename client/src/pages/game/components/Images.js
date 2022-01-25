@@ -2,6 +2,9 @@ import React from "react";
 import {useState, useEffect} from "react";
 import Image from "../../../components/image/Image";
 import Clickable from "../../../components/clickable/Clickable";
+import RoundTimer from "./cards/RoundTimer";
+import FailedRoundHelper from "./cards/FailedRound";
+import NoTimeHelper from "./cards/NoTime";
 
 import "./Images.css";
 import useTimer from "../useTimer";
@@ -86,21 +89,21 @@ const NextRoundTimer = ({timeLeft}) => {
     console.log(timeLeft);
     return (
         <div className="CenterAlert NextRoundTimer">
-            <div>Correct! Next round in {timeLeft}</div>
+            <RoundTimer restart = {true}/>
         </div>
     );
 }
 const FailedRound = () => {
     return (
         <div className="CenterAlert FailedRound">
-            Wrong! Failed The Round!
+            <FailedRoundHelper/>
         </div>
     );
 }
 const NoTime = () => {
     return (
         <div className="CenterAlert NoTime">
-            You Ran Out of Time!
+            <NoTimeHelper/>
         </div>
     );
 }
