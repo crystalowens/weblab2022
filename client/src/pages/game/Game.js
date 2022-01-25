@@ -52,20 +52,18 @@ const GameStage = (props) => {
     return (
         <div className="GameStage">
             <StartTransition onClick={props.onStart}/>
-            <GameInfo timeLeft={props.timeLeft} score={props.score} onRestart={props.onRestart}/>
+            <GameInfo timeLeft={props.timeLeft} score={props.score} onRestart={props.onRestart} isInGame = {props.isInGame}/>
             <Images leftNft={props.leftNft} rightNft={props.rightNft} isInGame = {props.isInGame} timeIsZero = {props.timeLeft == 0}
                 onCorrect={props.onCorrect} onFailure={props.onFailure} setPauseState = {props.setPauseState}/>
         </div>
     );
 }
 
-const GameInfo = ({timeLeft, score, onRestart}) => {
+const GameInfo = ({timeLeft, score, onRestart, isInGame}) => {
     return (
         <div className = "GameInfo">
             <Timer timeLeft={timeLeft}/>
-            {/* <Restart cname = "RestartButton" onRestart={onRestart}/> */}
-            <Restart cname={timeLeft > 6 ? "RestartButton EndGame": "RestartButton"} onRestart={onRestart}/> 
-{/* here */}
+            <Restart cname={!isInGame ? "RestartButton Highlight": "RestartButton"} onRestart={onRestart}/> 
             <Score cname = "Score" score={score}/>
         </div>
     );

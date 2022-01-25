@@ -28,8 +28,7 @@ const App = () => {
     <>
     <UserIdContext.Provider value = {{userId, setUserId}}>
       <Router>
-          <HomePage path = "/"/>
-          <Game path = "/game/"/>
+          <Game path = "/"/>
           <Profile path = "/profile/"/>
           <About path = "/about"/>
           <NotFound default />

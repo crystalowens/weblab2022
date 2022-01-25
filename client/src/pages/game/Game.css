@@ -55,6 +55,17 @@
     height: 51.2px;
 }
 
-.GameEnded {
-    background-color: green;
+.Highlight{
+    animation: flash 0.5s linear infinite alternate-reverse;
+    border-radius: 10px;
 }
+
+@keyframes flash{
+    0%{
+        box-shadow: 0px 0px 25px var(--yellow-highlight);
+    }
+    100%{
+        box-shadow: 0px 0px 0px var(--yellow-highlight);
+    }
+}
+

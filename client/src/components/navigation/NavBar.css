@@ -50,7 +50,7 @@ a:active {
 }
 
 .Highlight-bar {
-    height: 1px;
+    height: 5px;
     width: 100vw;
     position: relative;
 }

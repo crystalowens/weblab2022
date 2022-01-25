@@ -14,7 +14,7 @@ const NavLinks = () => {
   return (
       <div className="Links">
           <StyledLink to = "/game/">Play Game</StyledLink> <Divider/>
-          {/* <StyledLink to = "/about">About</StyledLink> <Divider/> */}
+          <StyledLink to = "/about">About</StyledLink> <Divider/>
           {/* <StyledLink to = "/">Leaderboard</StyledLink> <Divider/> */}
           {userId && (
               <> 

@@ -48,7 +48,7 @@ const AdditionalInfo = ({price, description})=>{
         priceText = "Never Sold Before";
     }
     else{
-        priceText = `The sales price was ${price} etherium.`;
+        priceText = `Sold for ${price} etherium.`;
     }
     return (
         <>
@@ -120,9 +120,9 @@ const Images = ({leftNft, rightNft, onCorrect, onFailure, setPauseState, isInGam
     }, time : 3});
 
     useEffect(() => {
-        if(isInGame) {
+        if(isInGame) { //entering game
             setMadeDecision(false);
-        }else{
+        }else{ //exiting game
             setTimerActivated(false); resetTimer();
         }
     }, [isInGame]);
@@ -142,12 +142,16 @@ const Images = ({leftNft, rightNft, onCorrect, onFailure, setPauseState, isInGam
     const onLeftImageClick = () => { 
         if(!isInGame) return;
         endRound();
-        setClickedCorrect(leftNft.price >= rightNft.price);
+        const correctness = leftNft.price >= rightNft.price;
+        if(!correctness) onFailure();
+        setClickedCorrect(correctness);
     }
     const onRightImageClick = () => {
         if(!isInGame) return;
         endRound();
-        setClickedCorrect(leftNft.price <= rightNft.price);
+        const correctness = leftNft.price <= rightNft.price;
+        if(!correctness) onFailure();
+        setClickedCorrect(correctness);
     }
 
     useEffect(() => {
