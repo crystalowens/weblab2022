@@ -33,7 +33,7 @@ const nftPool = [];
 async function randomMoralisNft(){
     const nft = randomElement(nftPool);
     try{
-    console.log(`Picked random nft: ${nft.name}, id: ${nft.price}, uri: ${nft.description.substring(0, 100)}...`);
+    //console.log(`Picked random nft: ${nft.name}, id: ${nft.price}, uri: ${nft.description.substring(0, 100)}...`);
     }
     catch(exc) {
         console.log(util.inspect(nft, {depth: 2}));

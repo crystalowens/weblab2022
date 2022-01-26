@@ -28,7 +28,7 @@ const About = () => {
               <div>
                 <div className="About-text Padded-left">
                   <div>
-                    <p>This site aims to familiarize you with NFTs, or "non-fungible tokens," which are typically static or dynamic art sold on the blockchain. By understanding how different art is priced and compared, you are equipped to better deal with our digital future. The most expensive NFT ever sold was Pak's "The Merge," sold in 2021 for over USD$91m, but art evaluated on this site is more typically between USD $25 (0.01 ETH as of Jan 2022) and USD $73,000 (30 ETH). What's the most expensive NFT you've seen?</p>
+                    <p> &emsp;This site aims to familiarize you with NFTs, or "non-fungible tokens," which are typically static or dynamic art sold on the blockchain. By understanding how different art is priced and compared, you are equipped to better deal with our digital future. The most expensive NFT ever sold was Pak's "The Merge," sold in 2021 for over USD$91m, but art evaluated on this site is more typically between USD $25 (0.01 ETH as of Jan 2022) and USD $73,000 (30 ETH). What's the most expensive NFT you've seen?</p>
                      <p> Some quick tips for the game:</p> 
                       <p> - You'll notice certain categories are systematically more valuable, and it's not based on aesthetic appeal. </p> 
                       <p> - Within a category, interesting and bright details add value. </p> 

@@ -5,7 +5,7 @@
     height: 15%;
     padding: 0 20px;
     color: var(--light-grey);
-    font-size: 16pt;
+    font-size: 14pt;
 }
 .Infomatic * {
     margin: 12px 0px;
@@ -16,8 +16,10 @@
 }
 
 .InfomaticTitle{
-    font-size: 24pt;
+    font-size: 18pt;
+    overflow-x: hidden;
 }
+
 /*Image containers: Individual and both*/
 .NftImage{
     width: 100%;
@@ -55,6 +57,8 @@
     flex-direction: column;
     align-items: center;
     justify-content:flex-start;
+
+    overflow: hidden;
 }
 
 .CorrectScreen{
@@ -69,12 +73,18 @@
     color: var(--light-grey);
     font-size: 24pt;
     font-weight: bold;
+    overflow-y: visible;
 }
 .Description{
     color: var(--light-grey);
     font-size: 16pt;
     align-self:flex-start;
-    overflow-y: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.Description::-webkit-scrollbar { 
+    width: 0;
+    height: 0;
 }
 
 .CenterAlert{

@@ -8,5 +8,7 @@
     height: 100%;
 }
 .Image:hover {
-    outline: 10px solid var(--yellow-highlight);
+    /*outline: 10px solid var(--yellow-highlight);*/
+    outline: 5px solid var(--backgroundColor);
+    box-shadow: 0px 0px 0px 10px var(--light-grey);
 }

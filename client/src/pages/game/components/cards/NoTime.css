@@ -3,6 +3,7 @@
     animation: rotate 3.5s cubic-bezier(0.6,-0.58, 0.43, 1.47) infinite reverse forwards;
     background-color: var(--dark-grey);
     width: 100%;
+    height: 100%;
     overflow: hidden;
     font-size: 48pt;
     border-radius: 10px;

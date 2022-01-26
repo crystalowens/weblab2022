@@ -24,8 +24,8 @@ const RoundTimer = ({restart}) => {
       strokeWidth={9}
       duration={3}
       size={140}
-      trailColor="#e0e0e0"
-      colors={[["#ffd620"]]}
+      trailColor="#383838"
+      colors={[["#e0e0e0"]]}
     >
       {renderTime}
     </CountdownCircleTimer>

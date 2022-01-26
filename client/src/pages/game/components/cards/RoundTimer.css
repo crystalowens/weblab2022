@@ -7,7 +7,7 @@
 
 .timer-wrapper{
     border-radius: 100px;
-    background-color: var(--primary);
+    background-color: var(--backgroundColor);
     width: 100%;;
     height: 100%;
 }

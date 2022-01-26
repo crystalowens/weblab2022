@@ -43,6 +43,8 @@ function endGame(userId) {
                 if(mongoGame.score > mongoUser.highscore){
                     mongoUser.highscore = mongoGame.score;
                     return Promise.all([mongoUser.save(), Game.deleteMany({userId : userId})]);
+                }else{
+                    return Game.deleteMany({userId : userId});
                 }
             }
             catch (err) {

@@ -2,7 +2,7 @@
 
 .NavBar-container{
     background-color: var(--primary);
-    height: 36px;
+    height: 28px;
     padding: 16px;
     display: flex;
     flex-direction: row;
@@ -22,19 +22,19 @@
     color: var(--light-grey);
 }
 
-a:link { 
+.NavBar-container a:link,.NavBar-container span:link { 
     text-decoration: none; 
     color: var(--light-grey); 
 }
-a:visited { 
+.NavBar-container a:visited,.NavBar-container span:visited { 
     text-decoration: none; 
     color: var(--light-grey); 
 }
-a:hover { 
+.NavBar-container a:hover, .NavBar-container span:hover { 
     text-decoration: none; 
-    color: var(--blue-highlight); 
+    color: var(--backgroundColor); 
 }
-a:active { 
+.NavBar-container a:active,.NavBar-container span:active { 
     text-decoration: none; 
     color: var(--light-grey); 
 }
@@ -54,4 +54,70 @@ a:active {
     width: 100vw;
     position: relative;
     z-index: 2;
+}
+
+/*SMALLER NAVBAR*/
+.DropDown {
+    height: 28px;
+    width: 40px;
+    padding-bottom: 10px;
+    position:relative;
+    transition: all 0.5s;
+   -webkit-transition: all 0.5s;
+}
+
+.Bars div{
+    height: 5px;
+    background: var(--light-grey);
+    margin: 7px 0px 7px 0px;
+    border-radius: 25px;
+    transition: all 0.5s;
+   -webkit-transition: all 0.5s;
+}
+
+.two { width: 35px; }
+.three { width: 30px;}
+.Bars:hover div { width: 100%;}
+
+/*Actual dropdown*/
+
+
+.DropDown-content{
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+
+    position: absolute;
+    transition: all 0.5s ease;
+    padding-top: 60px;
+    right: 0;
+    top:0;
+
+    border-radius: 10px;
+}
+
+.Bars:hover + .DropDown-content, .DropDown-content:hover {
+    cursor:pointer;
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+
+.LinkContainer{
+    background: linear-gradient(90deg, rgb(31, 31, 31) 0%, rgba(63, 63, 63, 0.9) 50%, rgb(31, 31, 31) 100%);
+    border-radius: 10px;
+    padding-bottom: 5px;
+}
+
+.LinkEdge{
+    padding:3px;
+    padding-right: 14px;
+    padding-left: 0px;
+    width: 150px;
+    text-align: right;
+}
+
+.DropDownLink {
+    font-size: 28px;
+    color:var(--light-grey);
 }

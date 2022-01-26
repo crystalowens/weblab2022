@@ -25,7 +25,24 @@ function createSignInHandlers(setUserId){
 
   return {handleLogin, handleLogout};
 }
-const LoginButton = () => {
+
+const createCustomButtons = (cname) => {
+  const CustomLoginButton = (renderProps) => {
+    return (
+      <span className = {cname} style = {{"cursor":"pointer"}} onClick={renderProps.onClick}>Login</span>
+    );
+  }
+
+  const CustomLogoutButton = (renderProps) => {
+    return (
+      <span className = {cname} style = {{"cursor":"pointer"}}  onClick={renderProps.onClick}>Logout</span>
+    );
+  }
+  return [CustomLoginButton, CustomLogoutButton];
+}
+
+const LoginButton = ({cname}) => {
+  const [customLoginButton, customLogoutButton] = createCustomButtons(cname);
   const {userId, setUserId} = useContext(UserIdContext);
   const {handleLogin, handleLogout} = createSignInHandlers(setUserId);
   return (
@@ -34,6 +51,7 @@ const LoginButton = () => {
           <GoogleLogout
             clientId={GOOGLE_CLIENT_ID}
             buttonText="Logout"
+            render = {customLogoutButton}
             onLogoutSuccess={handleLogout}
             onFailure={(err) => console.log(err)}
           />
@@ -41,6 +59,7 @@ const LoginButton = () => {
           <GoogleLogin
             clientId={GOOGLE_CLIENT_ID}
             buttonText="Login"
+            render={customLoginButton}
             onSuccess={handleLogin}
             onFailure={(err) => console.log(err)}
           />

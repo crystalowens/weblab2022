@@ -6,9 +6,9 @@ import "./Timer.css";
 //Time remaining: <span className={ props.timeLeft>5 ? "LongTime": "ShortTime"}>{props.timeLeft} </span>
 const Timer = (props) => {
   const [width, height] = useWindowSize();
-  const cname = `Timer ${props.timeLeft > 6 ? "LongTime": (props.timeLeft > 3 ? "ShortTime" : "EndTime" )}`;
+  const cname = `Timer ${props.timeLeft > 7 ? "LongTime": (props.timeLeft > 3 ? "ShortTime" : "EndTime" )}`;
   return (
-    <Card cname = {cname}>{width > 1153 ? "Time remaining: " : "Time: " }{props.timeLeft}</Card>
+    <Card cname = {cname}>{width > 1153 ? "Time remaining: " : (width < 550 ? "" : "Time: ") }{props.timeLeft}</Card>
   );
 };
 

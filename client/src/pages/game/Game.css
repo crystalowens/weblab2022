@@ -18,9 +18,11 @@
     flex-direction: column;
     align-items: stretch;
     justify-content:start;
+    transform: translateY(-10px);
     width: 65%;
     height: 80%;
     margin-top: 0px;
+    margin-bottom: 20px;
 }
 
 .GameInfo {
@@ -39,9 +41,12 @@
     height: min-content;
     width: 15%;
     border-radius: 10px;
-    overflow: hidden;
+    overflow: scroll;
 }
-
+.HowToPlay::-webkit-scrollbar { 
+    width: 0;
+    height: 0;
+}
 /*Cards*/
 .Timer{
     margin-left: 0;
@@ -54,7 +59,11 @@
 }
 
 .RestartButton {
-    height: 51.2px;
+    height: 44.8px;
+}
+
+.HideOverflow{
+    overflow:hidden;
 }
 
 .Highlight{
