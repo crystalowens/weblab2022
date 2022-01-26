@@ -3,7 +3,9 @@
 ## Credits
 
 Languages used: javascript and html/css
-Frameworks and Databases: Node.js MongoDB, express, reach Router,
+
+Frameworks and Databases: Node.js MongoDB, express, reach Router
+
 Apis/libraries: React, Moralis.io, react-countdown-circle-timer
 
 ## Downloading these files
