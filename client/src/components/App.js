@@ -23,8 +23,6 @@ const App = () => {
   useEffect(() => {
      getUser().then((user) => {
        setUserProfile(user);
-       console.log(`set profile to:${user}`);
-       console.log(user);
        if (user._id) setUserId(user._id);
      });
   }, []);

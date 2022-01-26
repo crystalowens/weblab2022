@@ -42,7 +42,6 @@ async function waitForElement(array){
 function useNftPool(){
     const [nftPool, setNftPool] = useState([]);
     useEffect(() => {
-        console.log('Pool started');
         const interval = fillPool(nftPool);
         return () => clearInterval(interval);
     }, []);

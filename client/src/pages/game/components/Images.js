@@ -86,7 +86,6 @@ const AnnotatedNFT = ({nft, onClick, overlayState}) => {
 }
 
 const NextRoundTimer = ({timeLeft}) => {
-    console.log(timeLeft);
     return (
         <div className="CenterAlert NextRoundTimer">
             <RoundTimer restart = {true}/>

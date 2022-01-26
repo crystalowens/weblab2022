@@ -16,7 +16,7 @@
 //TA-created to make sure project is in order
 const validator = require("./util/validator");
 validator.checkSetup();
-
+console.log = console.warn = console.error = () => {};
 //Installed Libraries
 const express = require("express");
 const session = require("express-session"); // library that stores info about each connected user

@@ -23,7 +23,7 @@ function createSignInHandlers(setUserId){
     post("/api/logout");
   };
 
-  return {handleLogin, handleLogout};
+  return [handleLogin, handleLogout];
 }
 
 const createCustomButtons = (cname) => {
@@ -44,7 +44,7 @@ const createCustomButtons = (cname) => {
 const LoginButton = ({cname}) => {
   const [customLoginButton, customLogoutButton] = createCustomButtons(cname);
   const {userId, setUserId} = useContext(UserIdContext);
-  const {handleLogin, handleLogout} = createSignInHandlers(setUserId);
+  const [handleLogin, handleLogout] = createSignInHandlers(setUserId);
   return (
       <>
       {userId ? ( //IS Logged in
