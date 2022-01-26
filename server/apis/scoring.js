@@ -50,7 +50,7 @@ function endGame(userId) {
             catch (err) {
                 console.log("User logged in during game");
             }
-        });
+        }).catch((err)=>{});
     }).catch((err)=>{});
 }
 

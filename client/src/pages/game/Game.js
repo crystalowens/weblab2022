@@ -42,7 +42,7 @@ const Game = () => {
     const onCorrect = () => { if(isInGame) { gameStateDispatch({type:"nextRound"}); }}
     const onFailure = () => { if(isInGame) { gameStateDispatch({type:"end"}); }}
 
-    useEffect(()=> { return () => { if(isInGame) {gameStateDispatch({type:"end"});} }}, []);;
+    useEffect(()=> { return () => { gameStateDispatch({type:"end"}); }}, []);;
     useEffect(()=> { if(isInGame){ setHasStarted(true);} }, [isInGame]);
 
     return (

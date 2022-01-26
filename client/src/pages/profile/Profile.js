@@ -17,22 +17,22 @@ const Profile = () => {
     picture: "https://imgix.ranker.com/user_node_img/50012/1000224926/original/charcoal-photo-u1"
   });*/
 
-  /*useEffect(() => {
-      console.log('loading profile');
-       getUser().then((user)=> {
-        console.log(user);
-        setUser(user);
-        setLoading(false);
-       });
-  }, []);*/
+ 
   const [user, setUser] = useState({
     highscore : 0,
-    username: "", 
+    username: "Loading...", 
     picture: "https://imgix.ranker.com/user_node_img/50012/1000224926/original/charcoal-photo-u1"
   });
-  const {userProfile} = useContext(UserProfileContext);
+  const {userProfile, setUserProfile} = useContext(UserProfileContext);
+
+  useEffect(() => {
+     getUser().then((user)=> {
+      setUser(user);
+      setUserProfile(user);
+     });
+}, []);
+
   useEffect(()=>{
-    console.log(`Profile changed to ${userProfile}`);
     if(userProfile){
       setUser(userProfile);
     }
