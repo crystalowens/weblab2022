@@ -1,6 +1,6 @@
 .AboutPage {
     width: 100vw;
-    height: 100vh;
+    height: 200%;
     background-color: var(--backgroundColor);
     color: var(--light-grey);
 }
@@ -20,4 +20,12 @@
   font-weight: 300;
   font-size: 24px;
   margin: var(--m) var(--s);
+}
+
+.Padded-left {
+  align-self: center; 
+  text-align: left; 
+  margin-left: 5%;
+  margin-right: 5%;  
+  width: 90%; 
 }
