@@ -2,6 +2,7 @@
 const moralis = require('./moralis-api.js');
 const util = require('util');
 const random = require('../../util/random.js');
+const { getPricing } = require('./pricing.js');
 const { randomElement } = require('../../util/random.js');
 const { isFormattableMetadata, formatMetadata, isValidMetadata } = require('./valid-metadata.js');
 
@@ -32,7 +33,7 @@ const nftPool = [];
 async function randomMoralisNft(){
     const nft = randomElement(nftPool);
     try{
-    console.log(`Picked random nft: ${nft.tokenAddress}, id: ${nft.tokenId}, uri: ${nft.tokenUri.substring(0, 100)}...`);
+    console.log(`Picked random nft: ${nft.name}, id: ${nft.price}, uri: ${nft.description.substring(0, 100)}...`);
     }
     catch(exc) {
         console.log(util.inspect(nft, {depth: 2}));
@@ -40,24 +41,45 @@ async function randomMoralisNft(){
     return nft;
 }
 
-//'World of Women' started posted a bunch of same pieces. have to take it out.
+
+async function validateNft(nft){
+    const metadata = await moralis.metadata(nft);
+    if(!isValidMetadata(metadata)) return null;
+    const newNft = {
+        tokenAddress : nft.token_address,
+        tokenId : nft.token_id,
+        tokenUri : nft.token_uri,
+        metadata : formatMetadata(metadata, nft.token_uri)
+    };
+    const pricing = await getPricing(newNft);
+    if(pricing.price != 0){
+        return {
+            name : newNft.metadata.name,
+            description : newNft.metadata.description,
+            image : newNft.metadata.image,
+            price : pricing.price,
+            sold : pricing.sold
+        };
+    }
+    else{
+        return null;
+    }
+}
+
+//'World of Women' started posted a bunch of same pieces. have to take it out. no displayables: decentraland, usuland, space bulls
 async function startCollecting(){
     const allQueries = ['Bored Ape Yacht Club', 'Doodles', 
         'Mutant Ape Yacht Club', 'PhantaBear', 'CryptoSkulls', 'CryptoPunks',
-        'Cool Cats', 'The Space Bulls TSB', 'Decentraland', 'Azuki', 'uwucrew', 'Zxdiac'];
+        'Cool Cats', 'Azuki', 'Zxdiac'];
     for (const query of allQueries) {
         const nfts = await retrieveAllNfts(query);
         let totalPushed = 0;
         for (const nft of nfts){
-            const metadata = await moralis.metadata(nft);
-            if(!isValidMetadata(metadata)) continue;
-            totalPushed++;
-            nftPool.push({
-                tokenAddress : nft.token_address,
-                tokenId : nft.token_id,
-                tokenUri : nft.token_uri,
-                metadata : formatMetadata(metadata, nft.token_uri)
-            });
+            const validatedNft = await validateNft(nft);
+            if(validatedNft != null){
+                nftPool.push(validatedNft);
+                totalPushed++;
+            }
         }
         console.log(`Of the total nfts, only ${totalPushed} had displayable metadata`);
     }
