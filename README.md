@@ -1,16 +1,10 @@
 # How to code a webapp with this skeleton
 
-## Initial setup
+## Credits
 
-All teammates will need (explained in http://weblab.to/install)
-  - A bash console (on Mac or Linux, this is Terminal. On Windows, we recommend Git Bash)
-  - NodeJS version 16. If it is installed correctly, typing "node --version" should give v16.13.1 and "npm --version" should give 8.1.2
-  - Visual Studio Code (or another code editor)
-  - the Prettier VSCode extension
-
-Also, all of you will need to go through the MongoDB Atlas setup (http://weblab.to/mongo-setup). 
-
-Additionally for authentication, one of you will need to obtain a CLIENT_ID, instructions are at http://weblab.to/clientid 
+Languages used: javascript and html/css
+Frameworks and Databases: Node.js MongoDB, express, reach Router,
+Apis/libraries: React, Moralis.io, react-countdown-circle-timer
 
 ## Downloading these files
 
