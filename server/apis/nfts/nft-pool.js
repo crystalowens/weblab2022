@@ -71,6 +71,7 @@ async function startCollecting(){
     const allQueries = ['Bored Ape Yacht Club', 'Doodles', 
         'Mutant Ape Yacht Club', 'PhantaBear', 'CryptoSkulls', 'CryptoPunks',
         'Cool Cats', 'Azuki', 'Zxdiac'];
+        // seemed cool but didn't load: 'HyperHash', 'Synapses', 'Scribbled Boundaries', '720 Minutes', 'Autology', 'Singularity'
     for (const query of allQueries) {
         const nfts = await retrieveAllNfts(query);
         let totalPushed = 0;

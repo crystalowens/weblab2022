@@ -41,11 +41,12 @@ const Profile = () => {
                 All-time high score: {user.highscore} points
                 </div>
                 <div>
-                {user.highscore === 0 ? "Amateur! Keep playing :)" : 
-                user.highscore >= 5 ? "You have a few points! But I think you just got lucky ;)" :
-                user.highscore >= 10 ? "Wow, you'd have to play at least 32 times to get that many points by luck! Keep playing to improve! :)" :
-                user.highscore >= 20 ? "You are an expert evaluator! Keep playing to improve! :)" :
-                user.highscore >= 100 ? "Appraiser extraordinaire! Keep playing to stay sharp! :)" :
+                {user.highscore === 0 ? "You're new at this! Keep playing to earn points :)" : 
+                user.highscore <= 2 ? "You have a single point! But I think you just got lucky ;)" :
+                user.highscore <= 5 ? "You have a few points! But I think you just got lucky ;)" :
+                user.highscore <= 10 ? "Wow, you'd have to play more than 30 times to get that many points by luck! Keep playing to improve! :)" :
+                user.highscore <= 20 ? "You are an expert evaluator of NFT value! Keep playing to improve! :)" :
+                user.highscore <= 100 ? "NFT appraiser extraordinaire! Keep playing to stay sharp! :)" :
                 ""}
                 </div>
             </div>

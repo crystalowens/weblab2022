@@ -48,7 +48,7 @@ const AdditionalInfo = ({price, description})=>{
         priceText = "Never Sold Before";
     }
     else{
-        priceText = `Sold for ${price} etherium.`;
+        priceText = `Sold for ${price} ethereum.`;
     }
     return (
         <>

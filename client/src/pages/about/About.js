@@ -23,6 +23,14 @@ const About = () => {
                   </div>
               </div>
               <h4 className="About-title">Would you survive?</h4>
+              <div id="About-text">
+                  <div>
+                    <p>This site aims to familiarize you with NFTs (non-fungible tokens, typically static or dynamic art sold on the blockchain). By understanding how different art is priced and compared, you are equipped to . </p>
+                     <p> Some tips for the game:</p> 
+                      <p> you'll notice certain categories are systematically more valuable. </p> 
+                  </div>
+              </div>
+
             </div>
         </div>
       </div>
